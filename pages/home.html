@@ -16,51 +16,14 @@
 <div class="container">
   <div class="section">
     <div class="row">
-      <div class="col l3 m6 s6">
-        <a href="#!/seller/1">
+      <div class="col l3 m6 s6" ng-repeat = "c in categories">
+        <a href="#!/seller/{{c.cat_id}}">
           <div class="dcard">
             <div class="center-align">
-              <img src="assets/images/grocery.png" width="90px" class="responsive-img" />
+              <img ng-src="{{img_url}}/w/uploads/category/thumb/{{c.img}}" width="90px" class="responsive-img" />
             </div>
             <div class="center-align black-text">
-              <h6>Grocery</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col l3 m6 s6">
-        <a href="#" target="_blank">
-          <div class="dcard">
-            <div class="center-align">
-              <img src="assets/images/resturant.png" width="90px" class="responsive-img" />
-            </div>
-            <div class="center-align black-text">
-              <h6>Resturant</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col l3 m6 s6">
-        <a href="#" target="_blank">
-          <div class="dcard">
-            <div class="center-align">
-              <img src="assets/images/fruits.png" width="90px" class="responsive-img" />
-            </div>
-            <div class="center-align black-text">
-              <h6>Fruits</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col l3 m6 s6">
-        <a href="#" target="_blank">
-          <div class="dcard">
-            <div class="center-align">
-              <img src="assets/images/grocery.png" width="90px" class="responsive-img" />
-            </div>
-            <div class="center-align black-text">
-              <h6>Food</h6>
+              <h6>{{c.name}}</h6>
             </div>
           </div>
         </a>

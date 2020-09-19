@@ -1,3 +1,8 @@
-app.controller("home", function ($scope, $http) {
-  $scope.name = "DeliveryMarg";
-});
+app.controller('home',['$scope','$rootScope','$http',function($scope,$rootScope,$http){
+	var api=$rootScope.site_url+"category";
+
+	$http.get(api+'/view?data=cat_id,name,img').then(function(response){
+		console.log(response);
+		$scope.categories = response.data;
+	});
+}]);

@@ -45,7 +45,7 @@
 			</div>
 		</nav>
 		<div ng-view></div>
-		<footer class="page-footer">
+		<footer class="page-footer hide-on-med-and-down">
 			<div class="container">
 				<div class="row">
 					<div class="col l4 s12">
@@ -72,6 +72,9 @@
 				<div class="container black-text">All Rights Reserved © 2020</div>
 			</div>
 		</footer>
+		<div class="hide-on-med-and-up">
+			<div class="center-align black-text"><small>All Rights Reserved © 2020</small></div>
+		</div>
 
 		<!-- Modal Structure -->
 		<div id="modalSignin" class="modal">
@@ -181,7 +184,30 @@
 		<script src="scripts/login.js"></script>
 		<script src="scripts/profile.js"></script>
 		<script src="scripts/seller.js"></script>
-		<script src="scripts/products.js"></script>
 		<script src="scripts/cart.js"></script>
+		<script src="scripts/category.js"></script>
+		<script src="scripts/products.js"></script>
+		<script>
+			function openCity(evt, cityName) {
+				// Declare all variables
+				var i, tabcontent, tablinks;
+
+				// Get all elements with class="tabcontent" and hide them
+				tabcontent = document.getElementsByClassName('tabcontent');
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = 'none';
+				}
+
+				// Get all elements with class="tablinks" and remove the class "active"
+				tablinks = document.getElementsByClassName('tablinks');
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(' active', '');
+				}
+
+				// Show the current tab, and add an "active" class to the link that opened the tab
+				document.getElementById(cityName).style.display = 'block';
+				evt.currentTarget.className += ' active';
+			}
+		</script>
 	</body>
 </html>

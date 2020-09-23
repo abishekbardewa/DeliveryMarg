@@ -3,7 +3,7 @@
     <div class="container col s12">
       <a href="#!" class="breadcrumb">Home</a>
       <a href="#!" class="breadcrumb">Location</a>
-      <a href="#!" class="breadcrumb"><strong>{{cname}} Stores</strong></a>
+      <a href="#!" class="breadcrumb"><strong>{{s_name}} Stores</strong></a>
     </div>
   </div>
 </nav>
@@ -20,7 +20,7 @@
           </div>
           <div class="col s8 black-text left">
               <h6 style="margin-top: 0px">Order {{cname}} Online</h6>
-              <h6>100+ Stores</h6>
+              <h6>{{s_name}} Stores</h6>
           </div>
         </div>
       </div>
@@ -31,15 +31,15 @@
 <div class="container">
   <div class="section">
     <div class="row">
-      <div class="col l6 m6 s12 seller-card" ng-repeat='s in sellers'>
-        <a href="#!/category/{{id}}/{{s.s_id}}/{{s.name}}">
+      <div class="col l6 m6 s12 seller-card" ng-repeat='c in categories'>
+        <a href="#!/products/{{c.cat_id}}/{{s_id}}/{{s_name}}/{{c.name}}">
           <div class="row">
             <div class="col s4">
-              <img ng-src="{{img_url}}/w/uploads/sellers/{{s.logo}}" class="responsive-img" />
+              <img ng-src="{{img_url}}/w/uploads/category/{{c.img}}" class="responsive-img" />
             </div>
             <div class="col s8 black-text left">
-              <h6>{{s.name}}</h5>
-              <p>{{sellerDistance}} <span>{{s.address}}</span></p>
+              <h6>{{c.name}}</h5>
+              <p>{{c.desc}}</p>
             </div>
           </div>
         </a>

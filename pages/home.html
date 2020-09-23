@@ -1,78 +1,72 @@
 <div class="container-fluid" style="width: 100%">
-  <img class="responsive-img" src="assets/images/ban.jpg" />
-</div>
-<!-- <div class="carousel carousel-slider">
-  <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1" /></a>
-  <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2" /></a>
-  <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3" /></a>
-  <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4" /></a>
-</div> -->
-
-<div class="container">
-  <div class="section center-align">
-    <h5>Instant same day pick up and delivery</h5>
-  </div>
-</div>
-<div class="container">
-  <div class="section">
-    <div class="row">
-      <div class="col l3 m6 s6" ng-repeat = "c in categories">
-        <a href="#!/seller/{{c.cat_id}}">
-          <div class="dcard">
-            <div class="center-align">
-              <img ng-src="{{img_url}}/w/uploads/category/thumb/{{c.img}}" width="90px" class="responsive-img" />
-            </div>
-            <div class="center-align black-text">
-              <h6>{{c.name}}</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+	<img class="responsive-img" src="assets/images/ban.jpg" />
 </div>
 
 <div class="container">
-  <div class="section">
-    <h4 class="center-align">Featured Resturant in your area</h4>
-    <div class="divider"></div>
-    <div class="row">
-      <div class="col s12 m4 l4">
-        <a href="#">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
-            </div>
-            <div class="card-content center-align">
-              <span class="card-title black-text">Xpress Mart</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col s12 m4 l4">
-        <a href="#">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
-            </div>
-            <div class="card-content center-align">
-              <span class="card-title black-text">Zaica</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col s12 m4 l4">
-        <a href="#">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
-            </div>
-            <div class="card-content center-align">
-              <span class="card-title black-text">Biriyani Palace</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+	<div class="section center-align">
+		<h5>Instant same day pick up and delivery</h5>
+	</div>
+</div>
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<div class="col l3 m6 s6" ng-repeat="c in categories">
+				<a href="#!/seller/{{c.cat_id}}/{{c.name}}">
+					<div class="dcard">
+						<div class="center-align">
+							<img ng-src="{{img_url}}/w/uploads/category/thumb/{{c.img}}" width="90px" class="responsive-img" />
+						</div>
+						<div class="center-align black-text">
+							<p>{{c.name}}</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="section">
+		<h4 class="center-align">Featured Resturant in your area</h4>
+		<div class="divider"></div>
+		<div class="row">
+			<div class="col s12 m4 l4">
+				<a href="#">
+					<div class="card">
+						<div class="card-image">
+							<img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
+						</div>
+						<div class="card-content center-align">
+							<span class="card-title black-text">Xpress Mart</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col s12 m4 l4">
+				<a href="#">
+					<div class="card">
+						<div class="card-image">
+							<img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
+						</div>
+						<div class="card-content center-align">
+							<span class="card-title black-text">Zaica</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col s12 m4 l4">
+				<a href="#">
+					<div class="card">
+						<div class="card-image">
+							<img src="https://puzzlerbox.com/template-kits/food-delivery/wp-content/uploads/sites/37/2020/08/vegan-food-RF62EUL.jpg" />
+						</div>
+						<div class="card-content center-align">
+							<span class="card-title black-text">Biriyani Palace</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>

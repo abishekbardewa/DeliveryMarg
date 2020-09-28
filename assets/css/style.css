@@ -135,7 +135,54 @@ del {
 	color: rgb(236, 103, 103);
 	font-size: 12px;
 }
-/* Style the tab */
+
+.profile .tabs {
+	display: inline-table;
+	white-space: normal !important;
+}
+
+.profile .tabs .tab {
+	width: 100%;
+	line-height: 2;
+}
+
+.profile .tabs .tab a {
+	color: rgb(161 162 165);
+	padding: 10px 24px;
+	text-align: left;
+	text-transform: none;
+}
+
+.profile .tabs .tab a:focus,
+.profile .tabs .tab a:focus.active {
+	background-color: rgb(238 238 238);
+	outline: none;
+}
+
+.profile .indicator {
+	display: none;
+}
+.cart-badge {
+	border-radius: 15px;
+	position: absolute;
+	right: -2px;
+	top: 5px;
+	height: 24px;
+	min-width: 0rem !important;
+	color: #ffffff !important;
+	font-size: 12px !important;
+}
+.cart-badge-mob {
+	border-radius: 15px;
+	position: absolute;
+	right: -14px;
+	top: 2px;
+	height: 24px;
+	min-width: 0rem !important;
+	color: #ffffff !important;
+	font-size: 12px !important;
+}
+/* Style the tab
 .tab {
 	float: left;
 	border: 1px solid #ccc;
@@ -144,7 +191,7 @@ del {
 	height: 300px;
 }
 
-/* Style the buttons that are used to open the tab content */
+/* Style the buttons that are used to open the tab content
 .tab button {
 	display: block;
 	background-color: inherit;
@@ -158,17 +205,16 @@ del {
 	transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
+/* Change background color of buttons on hover
 	background-color: #ddd;
 }
 
-/* Create an active/current "tab button" class */
+/* Create an active/current "tab button" class
 .tab button.active {
 	background-color: #ccc;
 }
 
-/* Style the tab content */
+/* Style the tab content
 .tabcontent {
 	float: left;
 	padding: 0px 12px;
@@ -176,4 +222,4 @@ del {
 	width: 70%;
 	border-left: none;
 	height: 300px;
-}
+} */

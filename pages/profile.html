@@ -27,43 +27,42 @@
 				</div>
 				<div class="card-panel collection">
 					<div class="row">
-						<div class="col s12">
+						<div class="col s12 profile">
 							<ul class="tabs">
-								<li class="tab col s3">
+								<li class="tab">
 									<a href="#orders" data-target=""><i class="material-icons left">event_note</i>Orders</a>
 								</li>
-								<li class="tab col s3">
+								<li class="tab active">
 									<a href="#profile-info" data-target=""><i class="material-icons left">person</i>Profiile Info</a>
 								</li>
-								<li class="tab col s3">
+								<li class="tab">
 									<a href="#address" data-target=""><i class="material-icons left">location_city</i>Shipping Address</a>
 								</li>
-								<li class="tab col s3">
+								<li class="tab">
 									<a href="#password" data-target=""><i class="material-icons left">lock_outline</i>Change Password</a>
 								</li>
-								<li class="tab col s3">
+								<li class="tab">
 									<a href="javascript:void(0);"><i class="material-icons left">exit_to_app</i>Sign Out</a>
 								</li>
 							</ul>
 						</div>
-						<div class="col s12 m9 l9">
-							<div id="orders" class="col s12">
-								<div ng-include="'pages/orders.html'"></div>
-							</div>
-							<div id="profile-info" class="col s12">
-								<div ng-include="'pages/profile-info.html'"></div>
-							</div>
-							<div id="address" class="col s12">
-								<div ng-include="'pages/address.html'"></div>
-							</div>
-							<div id="password" class="col s12">
-								<div ng-include="'pages/password.html'"></div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
-
+			<div class="section col s12 m9 l9">
+				<div id="orders" class="col s12">
+					<div ng-include="'pages/orders.html'"></div>
+				</div>
+				<div id="profile-info" class="active col s12">
+					<div ng-include="'pages/profile-info.html'"></div>
+				</div>
+				<div id="address" class="col s12">
+					<div ng-include="'pages/address.html'"></div>
+				</div>
+				<div id="password" class="col s12">
+					<div ng-include="'pages/password.html'"></div>
+				</div>
+			</div>
 			<!-- //row -->
 		</div>
 		<!-- //section -->

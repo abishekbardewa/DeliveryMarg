@@ -1,8 +1,10 @@
-var app = angular.module('DelMarg', ['ngRoute']);
+var app = angular.module('DelMarg', ['ngRoute', 'ngSanitize']);
 
 app.config([
 	'$routeProvider',
-	function config($routeProvider) {
+	'$httpProvider',
+	function config($routeProvider, $httpProvider) {
+		// $httpProvider.defaults.withCredentials = true;
 		$routeProvider
 			.when('/home', {
 				templateUrl: 'pages/home.html',

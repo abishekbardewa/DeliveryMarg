@@ -1,4 +1,4 @@
-app.controller('login', [
+app.controller('address', [
 	'$scope',
 	'$rootScope',
 	'$http',
@@ -7,7 +7,7 @@ app.controller('login', [
 	function ($scope, $rootScope, $http, $routeParams) {
 		$scope.name = 'Login';
 		var api = $rootScope.site_url + 'user';
-		$http.get(api + '/view?id=' + $scope.u_id + '&data').then(function (response) {
+		$http.get(api + '/shipping_address').then(function (response) {
 			// console.log(response);
 			$scope.orders = response.data;
 			console.log($scope.orders);

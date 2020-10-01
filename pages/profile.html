@@ -3,14 +3,56 @@
 		<div class="container col s12">
 			<a href="#!" class="breadcrumb">Home</a>
 			<a href="#!" class="breadcrumb"><strong>Dashboard</strong></a>
+			<!-- <p class="blue-text text-darken-2">
+				Hello,<br />
+				Abishek Bardewa
+			</p> -->
 			<div class="right sign-out">
 				<a class="waves-effect waves-light btn"><i class="material-icons left align-middle">exit_to_app</i>Signout</a>
 			</div>
 		</div>
 	</div>
 </nav>
-
-<div class="container-fluid">
+<div class="container">
+	<div class="section col s12">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab">
+						<a href="#orders" data-target=""><i class="material-icons">event_note</i>Orders</a>
+					</li>
+					<li class="tab active">
+						<a href="#profile-info" data-target=""><i class="material-icons">person</i>Profiile Info</a>
+					</li>
+					<li class="tab">
+						<a href="#address" data-target=""><i class="material-icons">location_city</i>Shipping Address</a>
+					</li>
+					<li class="tab">
+						<a href="#password" data-target=""><i class="material-icons">lock_outline</i>Change Password</a>
+					</li>
+					<li class="tab">
+						<a href="javascript:void(0);"><i class="material-icons">exit_to_app</i>Sign Out</a>
+					</li>
+				</ul>
+			</div>
+			<div class="section">
+				<div id="orders" class="col s12">
+					<div ng-include="'pages/orders.html'"></div>
+				</div>
+				<div id="profile-info" class="active col s12">
+					<div ng-include="'pages/profile-info.html'"></div>
+				</div>
+				<div id="address" class="col s12">
+					<div ng-include="'pages/address.html'"></div>
+				</div>
+				<div id="password" class="col s12">
+					<div ng-include="'pages/password.html'"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="container-fluid">
 	<div class="section">
 		<div class="row">
 			<div class="col s12 m3 l3">
@@ -63,11 +105,16 @@
 					<div ng-include="'pages/password.html'"></div>
 				</div>
 			</div>
-			<!-- //row -->
+
 		</div>
-		<!-- //section -->
+
 	</div>
-	<!-- //container -->
-</div>
+
+</div> -->
 
 <!-- </div> -->
+<script>
+	$(document).ready(function () {
+		$('.tabs').tabs();
+	});
+</script>

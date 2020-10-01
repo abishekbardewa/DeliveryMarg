@@ -6,7 +6,10 @@
  * Made By MaterializeCSS.com
  */
 body {
-	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Poppins', sans-serif; */
+	/* font-family: 'Source Code Pro', monospace;
+	 */
+	font-family: 'Quicksand', sans-serif;
 }
 .icon-block {
 	padding: 0 15px;
@@ -136,21 +139,89 @@ del {
 	font-size: 12px;
 }
 
-.profile .tabs {
-	display: inline-table;
-	white-space: normal !important;
+.cart-badge {
+	display: flex !important;
+	justify-content: center;
+	border-radius: 50%;
+	position: absolute;
+	right: 6px;
+	top: 9px;
+	height: 19px !important;
+	width: 19px !important;
+	align-items: center !important;
+	min-width: 0rem !important;
+	color: #ffffff !important;
+	font-size: 12px !important;
+	line-height: 21px !important;
+}
+.cart-badge-mob {
+	display: flex !important;
+	justify-content: center;
+	border-radius: 50%;
+	position: absolute;
+	right: -9px;
+	top: 7px;
+	height: 19px !important;
+	width: 19px !important;
+	align-items: center !important;
+	min-width: 0rem !important;
+	color: #ffffff !important;
+	font-size: 12px !important;
+	line-height: 21px !important;
 }
 
-.profile .tabs .tab {
-	width: 100%;
-	line-height: 2;
+.footer-list li {
+	/* padding-left: 10px; */
+}
+.footer-list li,
+a {
+	font-size: 13px;
+}
+.login-btn a {
+	text-transform: none !important ;
+	font-size: 12px !important;
+}
+.order-table {
+	border-collapse: unset !important;
+}
+.order-table th,
+td {
+	padding: 8px !important;
+	border-top: 1px solid #e3e9ef;
 }
 
+@media only screen and (min-width: 992px) {
+	.profile .tabs {
+		display: inline-table;
+		white-space: normal !important;
+	}
+
+	.profile .tabs .tab {
+		width: 100%;
+		line-height: 2;
+	}
+
+	.profile .tabs .tab a {
+		color: #1976d2;
+		padding: 10px 24px;
+		text-align: left;
+		text-transform: none;
+	}
+
+	.profile .tabs .tab a:focus,
+	.profile .tabs .tab a:focus.active {
+		background-color: rgb(238 238 238);
+		outline: none;
+	}
+
+	.profile .indicator {
+		display: none;
+	}
+}
 .profile .tabs .tab a {
-	color: rgb(161 162 165);
-	padding: 10px 24px;
-	text-align: left;
-	text-transform: none;
+	color: #1976d2;
+	align-items: center;
+	display: flex;
 }
 
 .profile .tabs .tab a:focus,
@@ -158,68 +229,27 @@ del {
 	background-color: rgb(238 238 238);
 	outline: none;
 }
-
 .profile .indicator {
 	display: none;
 }
-.cart-badge {
-	border-radius: 15px;
-	position: absolute;
-	right: -2px;
-	top: 5px;
-	height: 24px;
-	min-width: 0rem !important;
-	color: #ffffff !important;
-	font-size: 12px !important;
-}
-.cart-badge-mob {
-	border-radius: 15px;
-	position: absolute;
-	right: -14px;
-	top: 2px;
-	height: 24px;
-	min-width: 0rem !important;
-	color: #ffffff !important;
-	font-size: 12px !important;
-}
-/* Style the tab
-.tab {
-	float: left;
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
-	width: 30%;
-	height: 300px;
-}
-
-/* Style the buttons that are used to open the tab content
-.tab button {
-	display: block;
-	background-color: inherit;
-	color: black;
-	padding: 22px 16px;
+.tabs .tab a {
+	/* color: rgba(238,110,115,0.7); */
+	display: grid;
 	width: 100%;
-	border: none;
-	outline: none;
-	text-align: left;
-	cursor: pointer;
-	transition: 0.3s;
+	height: 100%;
+	padding: 0 24px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-webkit-transition: color 0.28s ease, background-color 0.28s ease;
+	transition: color 0.28s ease, background-color 0.28s ease;
 }
-
-/* Change background color of buttons on hover
-	background-color: #ddd;
+.tabs .tab {
+	display: inline-block;
+	text-align: center;
+	line-height: 25px;
+	height: 48px;
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
 }
-
-/* Create an active/current "tab button" class
-.tab button.active {
-	background-color: #ccc;
-}
-
-/* Style the tab content
-.tabcontent {
-	float: left;
-	padding: 0px 12px;
-	border: 1px solid #ccc;
-	width: 70%;
-	border-left: none;
-	height: 300px;
-} */

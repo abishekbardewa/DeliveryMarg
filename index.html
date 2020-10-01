@@ -8,10 +8,12 @@
 		<!-- CSS  -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 		<link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
+		<!-- <link href="assets/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
 		<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" />
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" /> -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" /> -->
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;800&display=swap" rel="stylesheet" />
 	</head>
 	<body ng-app="DelMarg">
 		<nav class="white lighten-1" role="navigation">
@@ -23,12 +25,12 @@
 					<li><a class="black-text" href="#">Orders</a></li>
 					<li><a class="black-text" href="#">Payment</a></li>
 					<li><a class="black-text" href="#">Chat Support</a></li>
-					<li><a class="black-text" href="#!/profile/87">Profile</a></li>
+					<li><a class="black-text" href="#!/profile/1199">Profile</a></li>
 					<li><a class="black-text modal-trigger" href="#modalSignin">Login</a></li>
 					<li>
 						<a class="black-text modal-trigger" href="#!/cart">
 							<i class="material-icons">shopping_cart</i>
-							<span class="cart-badge red badge">14</span>
+							<span class="cart-badge red lighten-1 badge">14</span>
 						</a>
 					</li>
 				</ul>
@@ -41,12 +43,12 @@
 					<li><a href="#">Payment</a></li>
 					<li><a href="#">Chat Support</a></li>
 					<li><a href="#!/home">home</a></li>
-					<li><a href="#!/profile/87">Profile</a></li>
+					<li><a href="#!/profile/1199">Profile</a></li>
 				</ul>
 				<a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"> <i class="material-icons">menu</i></a>
 				<a href="#!/cart" class="hide-on-med-and-up black-text right"
 					><i class="material-icons">shopping_cart</i>
-					<span class="cart-badge-mob red badge">10</span>
+					<span class="cart-badge-mob red lighten-1 badge">14</span>
 				</a>
 			</div>
 		</nav>
@@ -54,28 +56,49 @@
 		<footer class="page-footer hide-on-med-and-down">
 			<div class="container">
 				<div class="row">
-					<div class="col l4 s12">
-						<h5 class="black-text">DelMarg</h5>
-						<p class="grey-text text-darken-4">
-							We are pioneer at delivering in local areas of siliguri and soon will be extending to other near locations.
-						</p>
-					</div>
-					<div class="col l4 s12">
-						<h5 class="black-text">Working hours</h5>
-						<ul>
-							<li><a class="black-text" href="#!">Mon - Sat / 9:00 AM - 8:00 PM</a></li>
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>About Us</strong></h6>
+						<ul class="footer-list">
+							<li><a class="black-text" href="#!">About Company</a></li>
+							<li><a class="black-text" href="#!">Careers</a></li>
+							<li><a class="black-text" href="#!">Support</a></li>
+							<li><a class="black-text" href="#!">Privacy</a></li>
+							<li><a class="black-text" href="#!">Terms of use</a></li>
 						</ul>
 					</div>
-					<div class="col l4 s12">
-						<h5 class="black-text">Address</h5>
-						<ul>
-							<li><a class="black-text" href="#!">Siliguri,West Bengal-734001, India </a></li>
+
+					<div class="col l3 s12">
+						<!-- <h5 class="black-text">Delivery Service</h5> -->
+						<h6 class="black-text"><strong>Delivery Service</strong></h6>
+						<ul class="footer-list">
+							<li><a class="black-text" href="#!">Restuarant</a></li>
+							<li><a class="black-text" href="#!">Medicene</a></li>
+							<li><a class="black-text" href="#!">Grocery</a></li>
+							<li><a class="black-text" href="#!">Fruits & Vegetables</a></li>
 						</ul>
+					</div>
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>Support Service</strong></h6>
+						<p class="black-text" style="margin-bottom: -14px"><strong>24/7 customer support</strong></p>
+						<p class="black-text" style="font-size: 12px">Friendly 24/7 customer support</p>
+
+						<p class="black-text" style="margin-bottom: -14px"><strong>Secure online payment</strong></p>
+						<p class="black-text" style="font-size: 12px">We possess SSL / Secure certificate</p>
+					</div>
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>Download Our App</strong></h6>
+						<br />
+						<a id="logo-container " href="#" class="brand-logo"
+							><img class="responsive-img" src="assets/images/app-store.png" style="height: 40px"
+						/></a>
+						<a id="logo-container center-align" href="#" class="brand-logo"
+							><img class="responsive-img" src="assets/images/play-store.png" style="height: 41px"
+						/></a>
 					</div>
 				</div>
 			</div>
 			<div class="footer-copyright center-align">
-				<div class="container black-text">All Rights Reserved © 2020</div>
+				<p class="container black-text">All Rights Reserved © 2020</p>
 			</div>
 		</footer>
 		<div class="hide-on-med-and-up">
@@ -87,7 +110,7 @@
 			<div class="modal-content">
 				<div class="center-align black-text darken-4"><h6>Sign in with DelMarg</h6></div>
 
-				<form class="section">
+				<form class="" autocomplete="off">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">account_circle</i>
 						<input id="icon_prefix" type="text" class="validate" />
@@ -98,30 +121,17 @@
 						<input id="icon_password" type="password" class="validate" />
 						<label for="icon_password">Password</label>
 					</div>
-					<div class="input-field col s12">
-						<a class="waves-effect waves-light btn">Login</a>
-						<a class="blue-text text-darken-4 right" href="">Forgot my password?</a>
+					<div class="input-field col s6 center-align login-btn">
+						<a class="waves-effect waves-light btn-small">Login</a>
+						<a class="waves-effect waves-light white darken-4 black-text btn-small">Use Google</a>
+					</div>
+					<div class="input-field col s6 center-align">
+						<a class="blue-text text-darken-4" href="">Forgot my password?</a>
+						<a class="black-text modal-close modal-trigger" href="#modalSignup"
+							>Not Signed Up? <span class="blue-text text-darken-4">Sign Up</span></a
+						>
 					</div>
 				</form>
-				<hr />
-
-				<div class="row">
-					<div class="col s12 l6 offset-l3">
-						<div class="center-align">
-							<p>or with social</p>
-							<div class="col s6">
-								<a class="waves-effect waves-light red darken-4 btn-small">Google</a>
-							</div>
-
-							<div id="test1" class="col s6">
-								<a class="waves-effect waves-light blue darken-4 btn-small">Facebook</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 center-align">
-					<a class="black-text modal-close modal-trigger" href="#modalSignup">Not Signed Up? <span class="blue-text text-darken-4">Sign Up</span></a>
-				</div>
 			</div>
 		</div>
 
@@ -131,22 +141,22 @@
 					<h6>Sign Up a new account</h6>
 				</div>
 
-				<form class="col s12">
+				<form class="col s12" autocomplete="off">
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="material-icons prefix">email</i>
-							<input id="icon_email" type="email" class="validate" />
-							<label for="icon_email">Email Id</label>
+							<input id="email" type="email" class="validate" />
+							<label for="email">Email Id</label>
 						</div>
 						<div class="input-field col s12">
 							<i class="material-icons prefix">person</i>
-							<input id="icon_name" type="text" class="validate" />
-							<label for="icon_name">Name</label>
+							<input id="name" type="text" class="validate" />
+							<label for="name">Name</label>
 						</div>
 						<div class="input-field col s12">
 							<i class="material-icons prefix">phone</i>
-							<input id="icon_telephone" type="tel" class="validate" />
-							<label for="icon_telephone">Phone</label>
+							<input id="telephone" type="tel" class="validate" />
+							<label for="telephone">Phone</label>
 						</div>
 						<div class="input-field col s12">
 							<i class="material-icons prefix">lock</i>
@@ -158,8 +168,12 @@
 							<input id="password1" type="password" class="validate" />
 							<label for="password1">Confirm Password</label>
 						</div>
-						<div class="input-field col s12 align-center">
-							<a class="waves-effect waves-light btn" href="#">Sign Up</a>
+
+						<div class="input-field col s12 center-align login-btn">
+							<a class="waves-effect waves-light btn-small">Signup</a>
+							<a class="waves-effect waves-light white darken-4 black-text btn-small">Use Google</a>
+						</div>
+						<div class="input-field col s12 center-align">
 							<a class="black-text modal-close modal-trigger" href="#modalSignin"
 								>Already have an account? <span class="blue-text text-darken-4">Sign In</span></a
 							>
@@ -169,22 +183,13 @@
 			</div>
 		</div>
 
-		<!-- Cart Modal Structure -->
-		<!-- <div id="cart" class="modal side-sheet">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
-    </div> -->
 		<!--  Scripts-->
 		<script src="assets/js/jquery-2.1.1.min.js"></script>
 		<script src="assets/js/materialize.min.js"></script>
 		<script src="assets/js/init.js"></script>
 		<script src="assets/js/angular.min.js"></script>
 		<script src="assets/js/angular-route.min.js"></script>
+		<script src="assets/js/angular-sanitize.js"></script>
 		<script src="app.js"></script>
 		<script src="scripts/home.js"></script>
 		<script src="scripts/login.js"></script>
@@ -193,27 +198,6 @@
 		<script src="scripts/cart.js"></script>
 		<script src="scripts/category.js"></script>
 		<script src="scripts/products.js"></script>
-		<script>
-			function openCity(evt, cityName) {
-				// Declare all variables
-				var i, tabcontent, tablinks;
-
-				// Get all elements with class="tabcontent" and hide them
-				tabcontent = document.getElementsByClassName('tabcontent');
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = 'none';
-				}
-
-				// Get all elements with class="tablinks" and remove the class "active"
-				tablinks = document.getElementsByClassName('tablinks');
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(' active', '');
-				}
-
-				// Show the current tab, and add an "active" class to the link that opened the tab
-				document.getElementById(cityName).style.display = 'block';
-				evt.currentTarget.className += ' active';
-			}
-		</script>
+		<script src="scripts/address.js"></script>
 	</body>
 </html>

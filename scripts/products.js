@@ -19,9 +19,11 @@ app.controller('products', [
 
 		$scope.addToCart = function (p_id) {
 			console.log(p_id);
-			$http.post(cartApi + '/add/' + p_id).then(function (response) {
-				// $scope.products = response.data;
-				console.log(response);
+			$http.get(cartApi + '/add/' + p_id).then(function (response) {
+				$http.post(cartApi + '/fetchJson').then(function (response) {
+					$('#cartTotal1').html(response.data.rows);
+					$('#cartTotal2').html(response.data.rows);
+				});
 			});
 		};
 	},

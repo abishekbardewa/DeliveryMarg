@@ -25,12 +25,12 @@
 					<li><a class="black-text" href="#">Orders</a></li>
 					<li><a class="black-text" href="#">Payment</a></li>
 					<li><a class="black-text" href="#">Chat Support</a></li>
-					<li><a class="black-text" href="#!/profile/1199">Profile</a></li>
+					<li><a class="black-text" href="#!/profile">Profile</a></li>
 					<li><a class="black-text modal-trigger" href="#modalSignin">Login</a></li>
 					<li>
 						<a class="black-text modal-trigger" href="#!/cart">
 							<i class="material-icons">shopping_cart</i>
-							<span class="cart-badge red lighten-1 badge">14</span>
+							<span id="cartTotal1" class="cart-badge red lighten-1 badge">0</span>
 						</a>
 					</li>
 				</ul>
@@ -43,12 +43,12 @@
 					<li><a href="#">Payment</a></li>
 					<li><a href="#">Chat Support</a></li>
 					<li><a href="#!/home">home</a></li>
-					<li><a href="#!/profile/1199">Profile</a></li>
+					<li><a href="#!/profile">Profile</a></li>
 				</ul>
 				<a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"> <i class="material-icons">menu</i></a>
 				<a href="#!/cart" class="hide-on-med-and-up black-text right"
 					><i class="material-icons">shopping_cart</i>
-					<span class="cart-badge-mob red lighten-1 badge">14</span>
+					<span id="cartTotal2" class="cart-badge-mob red lighten-1 badge">0</span>
 				</a>
 			</div>
 		</nav>
@@ -106,29 +106,36 @@
 		</div>
 
 		<!-- Modal Structure -->
-		<div id="modalSignin" class="modal">
+		<div id="modalSignin" class="modal" ng-controller="login">
 			<div class="modal-content">
 				<div class="center-align black-text darken-4"><h6>Sign in with DelMarg</h6></div>
 
-				<form class="" autocomplete="off">
+				<form  autocomplete="off">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">account_circle</i>
-						<input id="icon_prefix" type="text" class="validate" />
-						<label for="icon_prefix">Username</label>
+						<input id="icon_prefix" type="text" class="validate" ng-model="x.username" />
+						<label for="icon_prefix">Username/Email</label>
 					</div>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">lock</i>
-						<input id="icon_password" type="password" class="validate" />
+						<input id="icon_password" type="password" class="validate" ng-model="x.password" />
 						<label for="icon_password">Password</label>
 					</div>
 					<div class="input-field col s6 center-align login-btn">
-						<a class="waves-effect waves-light btn-small">Login</a>
-						<a class="waves-effect waves-light white darken-4 black-text btn-small">Use Google</a>
+						<small class="red-text">{{errorMsg}}</small>
+						<button type="submit" ng-click ="loginSubmit(x)" class="waves-effect waves-light btn-small">Login</button>
+						<a class="waves-effect waves-light white darken-4 black-text btn-small"
+							><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; Google Login</a
+						>
 					</div>
 					<div class="input-field col s6 center-align">
-						<a class="blue-text text-darken-4" href="">Forgot my password?</a>
+						<a class="blue-text text-darken-4" href=""
+							><small><b>Forgot my password?</b></small></a
+						>
 						<a class="black-text modal-close modal-trigger" href="#modalSignup"
-							>Not Signed Up? <span class="blue-text text-darken-4">Sign Up</span></a
+							><small
+								><b>Not Signed Up? <span class="blue-text text-darken-4">Sign Up</span></b></small
+							></a
 						>
 					</div>
 				</form>
@@ -171,11 +178,15 @@
 
 						<div class="input-field col s12 center-align login-btn">
 							<a class="waves-effect waves-light btn-small">Signup</a>
-							<a class="waves-effect waves-light white darken-4 black-text btn-small">Use Google</a>
+							<a class="waves-effect waves-light white darken-4 black-text btn-small"
+								><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; Google Signup</a
+							>
 						</div>
 						<div class="input-field col s12 center-align">
 							<a class="black-text modal-close modal-trigger" href="#modalSignin"
-								>Already have an account? <span class="blue-text text-darken-4">Sign In</span></a
+								><small
+									><b>Already have an account? <span class="blue-text text-darken-4">Sign In</span></b></small
+								></a
 							>
 						</div>
 					</div>
@@ -199,5 +210,6 @@
 		<script src="scripts/category.js"></script>
 		<script src="scripts/products.js"></script>
 		<script src="scripts/address.js"></script>
+
 	</body>
 </html>

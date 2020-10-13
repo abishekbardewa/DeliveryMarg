@@ -1,5 +1,8 @@
 <div class="container-fluid" ng-controller="address">
-	<div class="section">
+	<div class="input-field col s12 m6 l6 align-center">
+		<button class="waves-effect waves-light btn" id="add-btn"><i class="material-icons left">add_circle_outline</i>Add New Address</button>
+	</div>
+	<div id="address-section" class="section">
 		<div class="row">
 			<form class="col s12">
 				<div class="row">
@@ -77,3 +80,11 @@
 		</table>
 	</div>
 </div>
+
+<script>
+	document.getElementById('add-btn').addEventListener('click', showAddForm);
+
+	function showAddForm() {
+		document.getElementById('address-section').classList.add('visible');
+	}
+</script>

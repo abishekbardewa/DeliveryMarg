@@ -5,12 +5,30 @@ app.controller('login', [
 	'$routeParams',
 
 	function ($scope, $rootScope, $http, $routeParams) {
-		$scope.name = 'Login';
-		var api = $rootScope.site_url + 'user';
-		$http.get(api + '/view?id=' + $scope.u_id + '&data').then(function (response) {
-			// console.log(response);
-			$scope.orders = response.data;
-			console.log($scope.orders);
+		// $scope.name = 'Login';
+		var api = $rootScope.site_url + 'users';
+
+		$scope.loginSubmit = function (data) {
+			$http({
+				method: 'POST',
+				url: api + '/login',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				data: data,
+			}).then(function (response) {
+				if (response.data === '1') {
+					console.log(response);
+					window.location.reload();
+				} else {
+					console.log(response);
+					$scope.errorMsg = 'Username/Email and password do not match.';
+				}
+			});
+		};
+
+		//Getting Session Info
+		$http.get(api + '/sessionData').then(function (response) {
+			$scope.sData = response.data;
+			console.log($scope.sData);
 		});
 	},
 ]);

@@ -15,7 +15,7 @@ app.controller('profile', [
 		$http.get(api + '/view?data').then(function (response) {
 			// console.log(response);
 			$scope.orders = response.data;
-			console.log($scope.orders);
+			// console.log($scope.orders);
 		});
 		//Getting all order on single order id
 		$scope.getOrders = function (o_id) {
@@ -26,8 +26,6 @@ app.controller('profile', [
 				console.log($scope.orderItem);
 			});
 		};
-
-		// //Getting User Info
-		// $http.get();
+		$('.datepicker').datepicker();
 	},
 ]);

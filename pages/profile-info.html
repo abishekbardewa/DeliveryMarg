@@ -1,27 +1,34 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="profile">
 	<!-- <h6 class="blue-text text-darken-2 center-align">
 		<span style="padding: 10px; border: 1px solid #e0e0e0; background: #f9f9f9">Update your Personal Information</span>
 	</h6> -->
 	<div class="section">
 		<form action="#">
 			<div class="input-field col l4 s12">
-				<i class="material-icons prefix">person</i>
-				<input id="icon_name" type="text" class="validate" />
-				<label for="icon_name">Name</label>
+				<i class="material-icons prefix">person</i> <input id="icon_name"
+					type="text" class="validate" /> <label for="icon_name">Name</label>
 			</div>
 			<div class="input-field col l4 s12">
-				<i class="material-icons prefix">email</i>
-				<input id="icon_email" type="email" class="validate" />
-				<label for="icon_email">Email Id</label>
+				<i class="material-icons prefix">people</i> <input id="icon_gender"
+					type="text" class="validate" /> <label for="icon_gender">Gender</label>
 			</div>
-
 			<div class="input-field col l4 s12">
-				<i class="material-icons prefix">phone</i>
-				<input id="icon_telephone" type="tel" class="validate" />
-				<label for="icon_telephone">Phone</label>
+				<i class="material-icons prefix">email</i> <input id="icon_email"
+					type="email" class="validate" /> <label for="icon_email">Email
+					Id</label>
+			</div>
+			
+			<div class="input-field col l4 s12">
+				<i class="material-icons prefix">phone</i> <input
+					id="icon_telephone" type="tel" class="validate" /> <label
+					for="icon_telephone">Phone</label>
+			</div>
+			<div class="input-field col l4 s12">
+				<i class="material-icons prefix">date_range</i> <input id="icon_birth"
+					type="text" class="validate datepicker" /> <label for="icon_birth">Date of Birth</label>
 			</div>
 			<div class="input-field col s12 align-center">
-				<a class="waves-effect waves-light btn" href="#">Edit</a>
+				<button class="waves-effect waves-light btn">Update Profile</button>
 			</div>
 		</form>
 	</div>

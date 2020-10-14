@@ -198,6 +198,9 @@ td {
 .profile .indicator {
 	display: none;
 }
+.profile .tabs {
+	text-align: center;
+}
 .profile .tabs .tab a {
 	color: #1976d2;
 	display: grid;

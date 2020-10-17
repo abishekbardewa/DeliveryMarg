@@ -1,318 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1.0"
-    />
-    <title>Starter Template - Materialize</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+		<title>Starter Template - Materialize</title>
 
-    <!-- CSS  -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/css/materialize.min.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <!-- <link href="assets/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
-    <link
-      href="assets/css/style.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+		<!-- <link href="assets/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+		<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" /> -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body ng-app="DelMarg">
-    <nav class="white lighten-1" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo"
-          ><img
-            class="responsive-img"
-            src="assets/images/deliverymarg.png"
-            style="height: 50px"
-        /></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="black-text" href="#">Orders</a></li>
-          <li><a class="black-text" href="#">Payment</a></li>
-          <li><a class="black-text" href="#">Chat Support</a></li>
-          <li><a class="black-text" href="#!/profile">Profile</a></li>
-          <li>
-            <a class="black-text modal-trigger" href="#modalSignin">Login</a>
-          </li>
-          <li>
-            <a class="black-text modal-trigger" href="#!/cart">
-              <i class="material-icons">shopping_cart</i>
-              <span id="cartTotal1" class="cart-badge red lighten-1 badge"
-                >0</span
-              >
-            </a>
-          </li>
-        </ul>
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" /> -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" /> -->
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;800&display=swap" rel="stylesheet" />
+	</head>
+	<body ng-app="DelMarg">
+		<nav class="white lighten-1" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="logo-container" href="#" class="brand-logo"
+					><img class="responsive-img" src="assets/images/deliverymarg.png" style="height: 50px"
+				/></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="black-text" href="#">Orders</a></li>
+					<li><a class="black-text" href="#">Payment</a></li>
+					<li><a class="black-text" href="#">Chat Support</a></li>
+					<li><a class="black-text" href="#!/profile">Profile</a></li>
+					<li>
+						<a class="black-text modal-trigger" href="#modalSignin">Login</a>
+					</li>
+					<li>
+						<a class="black-text modal-trigger" href="#!/cart">
+							<i class="material-icons">shopping_cart</i>
+							<span id="cartTotal1" class="cart-badge red lighten-1 badge">0</span>
+						</a>
+					</li>
+				</ul>
 
-        <ul id="nav-mobile" class="sidenav">
-          <li>
-            <a class="modal-trigger" href="#modalSignin"
-              ><i class="material-icons">person</i>Login</a
-            >
-          </li>
-          <li><a href="#">Orders</a></li>
-          <li><a href="#">Payment</a></li>
-          <li><a href="#">Chat Support</a></li>
-          <li><a href="#!/home">home</a></li>
-          <li><a href="#!/profile">Profile</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-          <i class="material-icons">menu</i></a
-        >
-        <a href="#!/cart" class="hide-on-med-and-up black-text right"
-          ><i class="material-icons">shopping_cart</i>
-          <span id="cartTotal2" class="cart-badge-mob red lighten-1 badge"
-            >0</span
-          >
-        </a>
-      </div>
-    </nav>
-    <div ng-view></div>
-    <footer class="page-footer hide-on-med-and-down">
-      <div class="container">
-        <div class="row">
-          <div class="col l3 s12">
-            <h6 class="black-text"><strong>About Us</strong></h6>
-            <ul class="footer-list">
-              <li><a class="black-text" href="#!">About Company</a></li>
-              <li><a class="black-text" href="#!">Careers</a></li>
-              <li><a class="black-text" href="#!">Support</a></li>
-              <li><a class="black-text" href="#!">Privacy</a></li>
-              <li><a class="black-text" href="#!">Terms of use</a></li>
-            </ul>
-          </div>
+				<ul id="nav-mobile" class="sidenav">
+					<li>
+						<a class="modal-trigger" href="#modalSignin"><i class="material-icons">person</i>Login</a>
+					</li>
+					<li><a href="#">Orders</a></li>
+					<li><a href="#">Payment</a></li>
+					<li><a href="#">Chat Support</a></li>
+					<li><a href="#!/home">home</a></li>
+					<li><a href="#!/profile">Profile</a></li>
+				</ul>
+				<a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"> <i class="material-icons">menu</i></a>
+				<a href="#!/cart" class="hide-on-med-and-up black-text right"
+					><i class="material-icons">shopping_cart</i>
+					<span id="cartTotal2" class="cart-badge-mob red lighten-1 badge">0</span>
+				</a>
+			</div>
+		</nav>
+		<div ng-view></div>
+		<footer class="page-footer hide-on-med-and-down">
+			<div class="container">
+				<div class="row">
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>About Us</strong></h6>
+						<ul class="footer-list">
+							<li><a class="black-text" href="#!">About Company</a></li>
+							<li><a class="black-text" href="#!">Careers</a></li>
+							<li><a class="black-text" href="#!">Support</a></li>
+							<li><a class="black-text" href="#!">Privacy</a></li>
+							<li><a class="black-text" href="#!">Terms of use</a></li>
+						</ul>
+					</div>
 
-          <div class="col l3 s12">
-            <!-- <h5 class="black-text">Delivery Service</h5> -->
-            <h6 class="black-text"><strong>Delivery Service</strong></h6>
-            <ul class="footer-list">
-              <li><a class="black-text" href="#!">Restuarant</a></li>
-              <li><a class="black-text" href="#!">Medicene</a></li>
-              <li><a class="black-text" href="#!">Grocery</a></li>
-              <li><a class="black-text" href="#!">Fruits & Vegetables</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h6 class="black-text"><strong>Support Service</strong></h6>
-            <p class="black-text" style="margin-bottom: -14px">
-              <strong>24/7 customer support</strong>
-            </p>
-            <p class="black-text" style="font-size: 12px">
-              Friendly 24/7 customer support
-            </p>
+					<div class="col l3 s12">
+						<!-- <h5 class="black-text">Delivery Service</h5> -->
+						<h6 class="black-text"><strong>Delivery Service</strong></h6>
+						<ul class="footer-list">
+							<li><a class="black-text" href="#!">Restuarant</a></li>
+							<li><a class="black-text" href="#!">Medicene</a></li>
+							<li><a class="black-text" href="#!">Grocery</a></li>
+							<li><a class="black-text" href="#!">Fruits & Vegetables</a></li>
+						</ul>
+					</div>
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>Support Service</strong></h6>
+						<p class="black-text" style="margin-bottom: -14px">
+							<strong>24/7 customer support</strong>
+						</p>
+						<p class="black-text" style="font-size: 12px">Friendly 24/7 customer support</p>
 
-            <p class="black-text" style="margin-bottom: -14px">
-              <strong>Secure online payment</strong>
-            </p>
-            <p class="black-text" style="font-size: 12px">
-              We possess SSL / Secure certificate
-            </p>
-          </div>
-          <div class="col l3 s12">
-            <h6 class="black-text"><strong>Download Our App</strong></h6>
-            <br />
-            <a id="logo-container " href="#" class="brand-logo"
-              ><img
-                class="responsive-img"
-                src="assets/images/app-store.png"
-                style="height: 40px"
-            /></a>
-            <a id="logo-container center-align" href="#" class="brand-logo"
-              ><img
-                class="responsive-img"
-                src="assets/images/play-store.png"
-                style="height: 41px"
-            /></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright center-align">
-        <p class="container black-text">All Rights Reserved © 2020</p>
-      </div>
-    </footer>
-    <div class="hide-on-med-and-up">
-      <div class="center-align black-text">
-        <small>All Rights Reserved © 2020</small>
-      </div>
-    </div>
+						<p class="black-text" style="margin-bottom: -14px">
+							<strong>Secure online payment</strong>
+						</p>
+						<p class="black-text" style="font-size: 12px">We possess SSL / Secure certificate</p>
+					</div>
+					<div class="col l3 s12">
+						<h6 class="black-text"><strong>Download Our App</strong></h6>
+						<br />
+						<a id="logo-container " href="#" class="brand-logo"
+							><img class="responsive-img" src="assets/images/app-store.png" style="height: 40px"
+						/></a>
+						<a id="logo-container center-align" href="#" class="brand-logo"
+							><img class="responsive-img" src="assets/images/play-store.png" style="height: 41px"
+						/></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright center-align">
+				<p class="container black-text">All Rights Reserved © 2020</p>
+			</div>
+		</footer>
+		<div class="hide-on-med-and-up">
+			<div class="center-align black-text">
+				<small>All Rights Reserved © 2020</small>
+			</div>
+		</div>
 
-    <!-- Modal Structure -->
-    <div id="modalSignin" class="modal" ng-controller="login">
-      <div class="modal-content">
-        <div class="center-align black-text darken-4">
-          <h6>Sign in with DelMarg</h6>
-        </div>
+		<!-- Modal Structure -->
+		<div id="modalSignin" class="modal" ng-controller="login">
+			<div class="modal-content">
+				<div class="center-align black-text darken-4">
+					<h6>Sign in with DelMarg</h6>
+				</div>
 
-        <form name="form" autocomplete="off" novalidate>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">account_circle</i>
-            <input
-              id="icon_prefix"
-              type="text"
-              class="validate"
-              name="username"
-              ng-model="x.username"
-              required=""
-            />
-            <label for="icon_prefix">Username/Email</label>
-            <br />
-            <div ng-show="form.$submitted || form.username.$touched">
-              <div ng-show="form.username.$error.required" class="red-text">
-                Tell us your username.
-              </div>
-            </div>
-          </div>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">lock</i>
-            <input
-              id="icon_password"
-              name="password"
-              type="password"
-              class="validate"
-              ng-model="x.password"
-              required=""
-            />
-            <label for="icon_password">Password</label>
-            <br />
-            <div ng-show="form.$submitted || form.password.$touched">
-              <div ng-show="form.password.$error.required" class="red-text">
-                Please enter your password.
-              </div>
-            </div>
-          </div>
+				<form name="form" autocomplete="off" novalidate>
+					<div class="input-field col s12">
+						<i class="material-icons prefix">account_circle</i>
+						<input id="icon_prefix" type="text" class="validate" name="username" ng-model="x.username" />
+						<label for="icon_prefix">Username/Email</label>
+					</div>
+					<div class="input-field col s12">
+						<i class="material-icons prefix">lock</i>
+						<input id="icon_password" name="password" type="password" class="validate" ng-model="x.password" />
+						<label for="icon_password">Password</label>
+					</div>
 
-          <div class="col s6 center-align">
-            <p class="red-text">{{errorMsg}}</p>
-          </div>
-          <div class="input-field col s6 center-align login-btn">
-            <button
-              type="submit"
-              ng-click="loginSubmit(x)"
-              class="waves-effect waves-light btn-small"
-            >
-              Login
-            </button>
-            <a
-              class="waves-effect waves-light white darken-4 black-text btn-small"
-              ><img
-                src="assets/images/google.png"
-                height="15px"
-                style="vertical-align: middle"
-              />&nbsp; Google Login</a
-            >
-          </div>
-          <div class="input-field col s6 center-align">
-            <a class="blue-text text-darken-4" href=""
-              ><small><b>Forgot my password?</b></small></a
-            >
-            <a class="black-text modal-close modal-trigger" href="#modalSignup"
-              ><small
-                ><b
-                  >Not Signed Up?
-                  <span class="blue-text text-darken-4">Sign Up</span></b
-                ></small
-              ></a
-            >
-          </div>
-        </form>
-      </div>
-    </div>
+					<div class="center-align col s12 l4 offset-l4 m4 offset-m4">
+						<span class="{{errorClass}}" ng-bind-html="errorMsg" style="padding: 5px"></span>
+					</div>
+					<div class="input-field col s6 center-align login-btn">
+						<button type="submit" ng-click="loginSubmit(x)" class="waves-effect btn-small">Login</button>
+						<a class="waves-effect waves-light white darken-4 black-text btn-small"
+							><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; Google Login</a
+						>
+					</div>
+					<div class="input-field col s6 center-align">
+						<a class="blue-text text-darken-4" href=""
+							><small><b>Forgot my password?</b></small></a
+						>
+						<a class="black-text modal-close modal-trigger" href="#modalSignup"
+							><small
+								><b>Not Signed Up? <span class="blue-text text-darken-4">Sign Up</span></b></small
+							></a
+						>
+					</div>
+				</form>
+			</div>
+		</div>
 
-    <div id="modalSignup" class="modal">
-      <div class="modal-content">
-        <div class="center-align black-text darken-4">
-          <h6>Sign Up a new account</h6>
-        </div>
+		<div id="modalSignup" class="modal" ng-controller="profile">
+			<div class="modal-content">
+				<div class="center-align black-text darken-4">
+					<h6>Sign Up a new account</h6>
+				</div>
 
-        <form class="col s12" autocomplete="off">
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">email</i>
-              <input id="email" type="email" class="validate" />
-              <label for="email">Email Id</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">person</i>
-              <input id="name" type="text" class="validate" />
-              <label for="name">Name</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">phone</i>
-              <input id="telephone" type="tel" class="validate" />
-              <label for="telephone">Phone</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">lock</i>
-              <input id="password" type="password" class="validate" />
-              <label for="password">Password</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">lock</i>
-              <input id="password1" type="password" class="validate" />
-              <label for="password1">Confirm Password</label>
-            </div>
+				<form name="form" class="col s12" autocomplete="off">
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">person</i>
+							<input id="name" ng-model="x.name" type="text" class="validate" />
+							<label for="name">First Name</label>
+						</div>
 
-            <div class="input-field col s12 center-align login-btn">
-              <a class="waves-effect waves-light btn-small">Signup</a>
-              <a
-                class="waves-effect waves-light white darken-4 black-text btn-small"
-                ><img
-                  src="assets/images/google.png"
-                  height="15px"
-                  style="vertical-align: middle"
-                />&nbsp; Google Signup</a
-              >
-            </div>
-            <div class="input-field col s12 center-align">
-              <a
-                class="black-text modal-close modal-trigger"
-                href="#modalSignin"
-                ><small
-                  ><b
-                    >Already have an account?
-                    <span class="blue-text text-darken-4">Sign In</span></b
-                  ></small
-                ></a
-              >
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">person</i>
+							<input id="lname" ng-model="x.lname" type="text" class="validate" />
+							<label for="lname">Last Name</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">email</i>
+							<input id="email" ng-model="x.email" type="email" class="validate" />
+							<label for="email">Email Id</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">people</i>
+							<input id="gender" ng-model="x.gender" type="text" class="validate" />
+							<label for="gender">Gender</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">phone</i>
+							<input id="telephone" ng-model="x.phone" type="tel" class="validate" />
+							<label for="telephone">Phone</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">lock</i>
+							<input id="pass" ng-model="x.pass" type="password" class="validate" />
+							<label for="pass">Password</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">lock</i>
+							<input id="cPass" type="password" class="validate" ng-model="x.cPass" ng-change="passCheck()" />
+							<label for="cPass">Confirm Password</label>
+							<span id="msg" class="{{errorClass}}"></span>
+						</div>
+						<div>
+							<span class="{{errorClass}}" ng-bind-html="errorMsg"></span>
+						</div>
+						<div class="input-field col s12 center-align login-btn">
+							<button type="submit" class="waves-effect btn-small" ng-disabled="form.$invalid" ng-click="signUpSubmit(x)">Signup</button>
+							<a class="waves-effect white darken-4 black-text btn-small"
+								><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; Google Signup</a
+							>
+						</div>
+						<div class="input-field col s12 center-align">
+							<a class="black-text modal-close modal-trigger" href="#modalSignin"
+								><small
+									><b>Already have an account? <span class="blue-text text-darken-4">Sign In</span></b></small
+								></a
+							>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 
-    <!--  Scripts-->
-    <script src="assets/js/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/materialize.min.js"></script>
-    <script src="assets/js/init.js"></script>
-    <script src="assets/js/angular.min.js"></script>
-    <script src="assets/js/angular-route.min.js"></script>
-    <script src="assets/js/angular-sanitize.js"></script>
-    <script src="assets/js/sweetalert.min.js"></script>
-    <script src="app.js"></script>
-    <script src="scripts/home.js"></script>
-    <script src="scripts/login.js"></script>
-    <script src="scripts/profile.js"></script>
-    <script src="scripts/seller.js"></script>
-    <script src="scripts/cart.js"></script>
-    <script src="scripts/category.js"></script>
-    <script src="scripts/products.js"></script>
-    <script src="scripts/address.js"></script>
-  </body>
+		<!--  Scripts-->
+		<script src="assets/js/jquery-2.1.1.min.js"></script>
+		<script src="assets/js/materialize.min.js"></script>
+		<script src="assets/js/init.js"></script>
+		<script src="assets/js/angular.min.js"></script>
+		<script src="assets/js/angular-route.min.js"></script>
+		<script src="assets/js/angular-sanitize.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="app.js"></script>
+		<script src="scripts/home.js"></script>
+		<script src="scripts/login.js"></script>
+		<script src="scripts/profile.js"></script>
+		<script src="scripts/seller.js"></script>
+		<script src="scripts/cart.js"></script>
+		<script src="scripts/category.js"></script>
+		<script src="scripts/products.js"></script>
+		<script src="scripts/order.js"></script>
+		<script src="scripts/address.js"></script>
+	</body>
 </html>

@@ -230,3 +230,14 @@ td {
 #address-section {
 	display: none;
 }
+
+input.ng-dirty.ng-valid {
+	border-bottom: 1px solid #388e3c !important;
+}
+
+input.ng-dirty.ng-invalid {
+	border-bottom: 1px solid #d32f2f !important;
+}
+.modal:focus {
+	outline: none !important;
+}

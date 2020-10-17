@@ -10,24 +10,8 @@ app.config([
 				templateUrl: 'pages/home.html',
 				controller: 'home',
 			})
-			.when('/login', {
-				templateUrl: 'pages/login.html',
-				controller: 'login',
-			})
 			.when('/profile', {
 				templateUrl: 'pages/profile.html',
-				controller: 'profile',
-			})
-			.when('/orders', {
-				templateUrl: 'pages/orders.html',
-				controller: 'profile',
-			})
-			.when('/address', {
-				templateUrl: 'pages/address.html',
-				controller: 'profile',
-			})
-			.when('/password', {
-				templateUrl: 'pages/password.html',
 				controller: 'profile',
 			})
 			.when('/seller/:id/:name', {
@@ -38,7 +22,6 @@ app.config([
 				templateUrl: 'pages/products.html',
 				controller: 'products',
 			})
-
 			.when('/cart', {
 				templateUrl: 'pages/cart.html',
 				controller: 'cart',

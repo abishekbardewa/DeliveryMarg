@@ -36,16 +36,16 @@ app.controller('address', [
 				if (response.data === '1') {
 					$scope.loader();
 					M.toast({
-						html: 'Address Saved Successfully',
+						html: 'Address Added',
 						outDuration: 375,
-						classes: 'green lighten-2',
+						classes: ' green accent-4',
 					});
 					// $scope.resetForm();
 				} else if (response.data === '0') {
 					M.toast({
 						html: 'Address Not Saved',
 						outDuration: 375,
-						classes: 'red',
+						classes: 'red lighten-1',
 					});
 				} else {
 					$scope.errorMsg = response.data;

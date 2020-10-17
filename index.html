@@ -123,16 +123,16 @@
 				<form name="form" autocomplete="off" novalidate>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">account_circle</i>
-						<input id="icon_prefix" type="text" class="validate" name="username" ng-model="x.username" />
+						<input id="icon_prefix" type="email" class="validate" name="email" ng-model="x.email" />
 						<label for="icon_prefix">Username/Email</label>
 					</div>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">lock</i>
-						<input id="icon_password" name="password" type="password" class="validate" ng-model="x.password" />
+						<input id="icon_password" name="pass" type="password" class="validate" ng-model="x.pass" />
 						<label for="icon_password">Password</label>
 					</div>
 
-					<div class="center-align col s12 l4 offset-l4 m4 offset-m4">
+					<div class="center-align">
 						<span class="{{errorClass}}" ng-bind-html="errorMsg" style="padding: 5px"></span>
 					</div>
 					<div class="input-field col s6 center-align login-btn">
@@ -155,7 +155,7 @@
 			</div>
 		</div>
 
-		<div id="modalSignup" class="modal" ng-controller="profile">
+		<div id="modalSignup" class="modal" ng-controller="login">
 			<div class="modal-content">
 				<div class="center-align black-text darken-4">
 					<h6>Sign Up a new account</h6>
@@ -200,8 +200,8 @@
 							<label for="cPass">Confirm Password</label>
 							<span id="msg" class="{{errorClass}}"></span>
 						</div>
-						<div>
-							<span class="{{errorClass}}" ng-bind-html="errorMsg"></span>
+						<div class="center-align">
+							<span class="{{errorClass}}" ng-bind-html="errorMsg" style="padding: 5px"></span>
 						</div>
 						<div class="input-field col s12 center-align login-btn">
 							<button type="submit" class="waves-effect btn-small" ng-disabled="form.$invalid" ng-click="signUpSubmit(x)">Signup</button>
@@ -223,6 +223,7 @@
 
 		<!--  Scripts-->
 		<script src="assets/js/jquery-2.1.1.min.js"></script>
+		<script src="assets/js/jquery.form.min.js"></script>
 		<script src="assets/js/materialize.min.js"></script>
 		<script src="assets/js/init.js"></script>
 		<script src="assets/js/angular.min.js"></script>

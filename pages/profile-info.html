@@ -1,16 +1,26 @@
 <div class="container-fluid" ng-controller="profile">
 	<div class="section">
-		<form name="form" autocomplete="off">
-			<div class="file-field input-field col l12 s12">
-				<div class="grey btn-small">
-					<span>Upload Image</span> 
-					<input type="file" name="img" ng-files="u.img" />
-				</div>
-				<div class="file-path-wrapper col l12 s12">
-					<input class="file-path validate" type="text" ng-files="u.img" placeholder="No file chosen" />
-					<small class="red-text">Upload JPG, GIF or PNG image. 300 x 300.</small>
+		<form id="form" name="form" method="post" action="" autocomplete="off">
+			<!-- <form name="form" autocomplete="off"> -->
+			<div class="row">
+				<div class="col l12 s12 center-align grey lighten-4">
+					<div class="col l2 s12" ng-show="u.img" style="padding: 15px 0px">
+						<img src="{{img_url}}uploads/users/thumb/{{u.img}}" width="100" class="responsive-img" />
+					</div>
+					<div class="col l10 s12 file-field input-field">
+						<div class="col l4 s12 waves-effect grey darken-1 btn white-text">
+							<span>Upload Image</span>
+							<input type="file" ng-model="u.newimage" name="image" />
+							<input ng-model="u.image" name="old_image" hidden />
+						</div>
+						<div class="col l12 s12 file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="No file chosen" />
+							<small class="red-text left">Upload JPG, GIF or PNG image. 300 x 300.</small>
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<div class="input-field col l4 s12">
 				<i class="material-icons prefix">person</i> <input id="icon_name" type="text" name="name" ng-model="u.name" class="validate" />
 				<!-- <label for="icon_name">Name</label>  -->
@@ -37,7 +47,7 @@
 			<span class="{{errorClass}} red-text" ng-bind-html="errorMsg" style="padding: 5px"></span>
 			<!-- </div> -->
 			<div class="input-field col s12 align-center">
-				<button type="submit" class="waves-effect waves-light btn" ng-click="updateProfile(u)">Update Profile</button>
+				<button type="submit" class="waves-effect btn" ng-click="updateProfile(u)">Update Profile</button>
 			</div>
 		</form>
 	</div>

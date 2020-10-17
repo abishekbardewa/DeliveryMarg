@@ -8,61 +8,35 @@ app.controller('profile', [
 		var api = $rootScope.site_url + 'users';
 		$scope.errorClass = 'red-text';
 		//View User
-		$http.get(api + '/view?data=user_id,name,email,gender,phone,dob,img').then(function (response) {
-			var uInfo = response.data;
-			for (let user of uInfo) {
-				user.dob = new Date(user.dob);
-				$scope.u = user;
-			}
-		});
+		$scope.loader = () => {
+			$http.get(api + '/view?data=user_id,name,email,gender,phone,dob,img').then(function (response) {
+				var uInfo = response.data;
+				for (let user of uInfo) {
+					user.dob = new Date(user.dob);
+					$scope.u = user;
+				}
+				console.log(uInfo);
+			});
+		};
+
+		$scope.loader();
 
 		//Update Profile
-		$scope.updateProfile = (data) => {
-			console.log(data);
-			$http({
-				method: 'post',
+		$scope.updateProfile = function (data) {
+			console.log('console:', data);
+			$('#form').ajaxForm({
+				type: 'POST',
 				url: api + '/profile',
 				data: data,
-				header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			}).then(function (response) {
-				console.log(response.data);
-				if (response.data === '1') {
-					swal('Good Job!', 'Profile Updated!', 'success');
-				} else {
-					$scope.errorMsg = response.data;
-				}
+				success: function (data) {
+					if (data === '1') {
+						$scope.loader();
+						swal('Good Job!', 'Profile Updated!', 'success');
+					} else {
+						$scope.errorMsg = data;
+					}
+				},
 			});
 		};
-
-		//Sign Up User
-		$scope.signUpSubmit = (data) => {
-			console.log(data);
-			$http({
-				method: 'post',
-				url: api + '/signUp',
-				data: data,
-				header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			}).then(function (response) {
-				if (response.data === '1') {
-					swal('Good Job!', 'Sign up Completed!', 'success');
-				} else {
-					$scope.errorMsg = response.data;
-				}
-			});
-		};
-
-		//Password Match Validation
-		$scope.passCheck = () => {
-			const pass = document.getElementById('pass').value;
-			const cPass = document.getElementById('cPass').value;
-			const msg = document.getElementById('msg');
-			if (pass !== cPass || pass === '' || cPass === '') {
-				msg.innerHTML = '<strong>Password Not Matched!</strong>';
-			} else {
-				msg.classList.toggle('green-text');
-				msg.innerHTML = '<strong>Password Matched!</strong>';
-			}
-		};
-		$('.datepicker').datepicker();
 	},
 ]);

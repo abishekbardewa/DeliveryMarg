@@ -5,7 +5,6 @@ app.controller('address', [
 	'$routeParams',
 
 	function ($scope, $rootScope, $http, $routeParams) {
-		$scope.name = 'Login';
 		var api = $rootScope.site_url + 'users';
 
 		$scope.loader = () => {
@@ -48,7 +47,11 @@ app.controller('address', [
 						classes: 'red lighten-1',
 					});
 				} else {
-					$scope.errorMsg = response.data;
+					M.toast({
+						html: 'Please Sign In to add address',
+						outDuration: 375,
+						classes: 'pink darken-1',
+					});
 				}
 			});
 		};

@@ -1,0 +1,36 @@
+<div id="wish">
+	<div class="container section" ng-controller="wishlist">
+		<div class="row">
+			<h6 class="center-align"><b>Your Wish List ({{wishCount}})</b></h6>
+		</div>
+		<table class="highlight centered">
+			<!-- <thead>
+					<tr>
+						<th>Item</th>
+						<th>Image</th>
+						<th>Price</th>
+						<th>Remove</th>
+					</tr>
+				</thead> -->
+
+			<tbody>
+				<tr ng-repeat="w in wish">
+					<td>{{w.name}}</td>
+					<td><img src="{{img_url}}/w/uploads/products/{{w.img}}" width="60" /></td>
+					<td>{{w.price}}</td>
+					<td>
+						<!-- <a href="javascript:void(0)" ng-click="deleteWish()"><i class="material-icons red-text accent-4">delete_forever</i></a> -->
+						<a href="javascript:void(0)" ng-click="deleteWish(w.p_id)"><i class="material-icons red-text accent-4">delete_forever</i></a>
+					</td>
+					<td>
+						<button class="btn" ng-controller="products" ng-click="addToCart(w.p_id)">Add to cart</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- <div id="empty-wish" style="text-align: center">
+	<h4>Cart is empty</h4>
+</div> -->

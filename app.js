@@ -35,6 +35,6 @@ app.config([
 ]);
 
 app.run(function ($rootScope) {
-	$rootScope.site_url = 'http://127.0.0.1/deli_api/index.php/';
-	$rootScope.img_url = 'http://127.0.0.1/deli_api/assets/';
+	$rootScope.site_url = 'http://127.0.0.1/DeliveryApi/index.php/';
+	$rootScope.img_url = 'http://127.0.0.1/DeliveryApi/assets/';
 });

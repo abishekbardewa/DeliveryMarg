@@ -43,10 +43,11 @@
 						<textarea id="address" name="address" ng-model="x.address" class="materialize-textarea"></textarea>
 						<label for="address">Address</label>
 					</div>
-					<div class="input-field col s12 l4 offset-l4 m4 offset-m4 grey lighten-4">
-						<span class="red-text" ng-bind-html="errorMsg"></span>
-					</div>
+					<!-- <div class="input-field col s12 l4 offset-l4 m4 offset-m4 grey lighten-4">
+
+					</div> -->
 					<div class="input-field col s12 m6 l6 align-center">
+						<span class="red-text" ng-bind-html="errorMsg"></span>
 						<button type="submit" class="waves-effect btn" ng-click="saveAddress(x)" ng-disabled="form.$invalid">Add Address</button>
 					</div>
 				</div>

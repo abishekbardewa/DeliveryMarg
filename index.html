@@ -132,13 +132,13 @@
 						<label for="icon_password">Password</label>
 					</div>
 
-					<div class="center-align">
+					<!-- <div class="center-align">
 						<span class="{{errorClass}}" ng-bind-html="errorMsg" style="padding: 5px"></span>
-					</div>
+					</div> -->
 					<div class="input-field col s6 center-align login-btn">
 						<button type="submit" ng-click="loginSubmit(x)" class="waves-effect btn-small">Login</button>
 						<a class="waves-effect waves-light white darken-4 black-text btn-small"
-							><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; Google Login</a
+							><img src="assets/images/google.png" height="15px" style="vertical-align: middle" />&nbsp; or Use Google</a
 						>
 					</div>
 					<div class="input-field col s6 center-align">
@@ -165,8 +165,8 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="material-icons prefix">person</i>
-							<input id="name" ng-model="x.name" type="text" class="validate" />
-							<label for="name">First Name</label>
+							<input id="fname" ng-model="x.name" type="text" class="validate" />
+							<label for="fname">First Name</label>
 						</div>
 
 						<div class="input-field col s12">
@@ -236,6 +236,7 @@
 		<script src="scripts/profile.js"></script>
 		<script src="scripts/seller.js"></script>
 		<script src="scripts/cart.js"></script>
+		<script src="scripts/wishlist.js"></script>
 		<script src="scripts/category.js"></script>
 		<script src="scripts/products.js"></script>
 		<script src="scripts/order.js"></script>

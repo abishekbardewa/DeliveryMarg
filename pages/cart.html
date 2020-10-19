@@ -6,46 +6,56 @@
 		</div>
 	</div>
 </nav>
-<div class="container">
-	<div class="section">
-		<div class="row">
-			<h6 class="left">Your Cart is ready</h6>
-			<a class="right waves-effect red btn white-text"><i class="material-icons left">remove_shopping_cart</i>Remove all</a>
-		</div>
-		<hr />
-		<table class="highlight centered">
-			<thead>
-				<tr>
-					<th>Item</th>
-					<th>Quantity</th>
-					<th>Price</th>
-					<th>Total</th>
-					<th>Remove</th>
-				</tr>
-			</thead>
+<div id="cart">
+	<div class="container">
+		<div class="section">
+			<div class="row">
+				<h6 class="left"><b>Your Cart is ready ({{cart.rows}})</b></h6>
+				<button id="remove-all" href="javascript:void(0)" class="right waves-effect red btn white-text" ng-click="deleteCart(cart.rows)">
+					<i class="material-icons left">remove_shopping_cart</i>Remove all
+				</button>
+			</div>
+			<hr />
+			<table class="highlight centered">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Total</th>
+						<th>Remove</th>
+					</tr>
+				</thead>
 
-			<tbody>
-				<tr ng-repeat="ci in cartItem">
-					<td>{{ci.name}}</td>
-					<td>{{ci.qty}}</td>
-					<td>&#x20B9; {{ci.sp}}</td>
-					<td>&#x20B9; {{ci.qty*ci.sp}}</td>
-					<td><i class="material-icons red-text accent-4">delete_forever</i></td>
-				</tr>
-			</tbody>
-		</table>
+				<tbody>
+					<tr ng-repeat="ci in cartItem">
+						<td>{{ci.name}}</td>
+						<td>{{ci.qty}}</td>
+						<td>&#x20B9; {{ci.sp}}</td>
+						<td>&#x20B9; {{ci.qty*ci.sp}}</td>
+						<td>
+							<a href="javascript:void(0)" ng-click="deleteItem(ci.p_id)"><i class="material-icons red-text accent-4">delete_forever</i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="right-align">
-			<h6>Subtotal: <strong>&#x20B9; {{cart.total}}</strong></h6>
-			<div class="">
-				<a class="waves-effect grey lighten-3 btn black-text"><i class="material-icons left">shopping_basket</i>Shop More</a>
-				<!-- </div>
+	<div class="container">
+		<div class="row">
+			<div class="right-align">
+				<h6>Subtotal: <strong>&#x20B9; {{cart.total}}</strong></h6>
+				<div class="">
+					<a class="waves-effect grey lighten-3 btn black-text"><i class="material-icons left">shopping_basket</i>Shop More</a>
+					<!-- </div>
       <div class="col s3"> -->
-				<a class="waves-effect green btn white-text"><i class="material-icons left">check</i>Checkout</a>
+					<a class="waves-effect green btn white-text"><i class="material-icons left">check</i>Checkout</a>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div id="empty-cart" style="text-align: center">
+	<h4>Cart is empty</h4>
 </div>

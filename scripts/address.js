@@ -7,9 +7,11 @@ app.controller('address', [
 	function ($scope, $rootScope, $http, $routeParams) {
 		var api = $rootScope.site_url + 'users';
 
+		//User Address
 		$scope.loader = () => {
 			$http.get(api + '/viewAddress').then(function (response) {
 				$scope.address = response.data;
+				$scope.addr = $scope.address[0];
 			});
 		};
 		$scope.loader();
@@ -34,6 +36,7 @@ app.controller('address', [
 			}).then(function (response) {
 				if (response.data === '1') {
 					$scope.loader();
+					// $scope.loaderInit();
 					M.toast({
 						html: 'Address Added',
 						outDuration: 375,
@@ -78,6 +81,7 @@ app.controller('address', [
 							icon: 'success',
 						});
 						$scope.loader();
+						// $scope.loaderInit();
 					});
 				} else {
 					swal('Your address file is safe!');

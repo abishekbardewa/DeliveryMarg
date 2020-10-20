@@ -6,7 +6,7 @@
 		</div>
 	</div>
 </nav>
-<div id="cart">
+<div ng-if="cart.rows">
 	<div class="container">
 		<div class="section">
 			<div class="row">
@@ -15,10 +15,9 @@
 					<i class="material-icons left">remove_shopping_cart</i>Remove all
 				</button>
 			</div>
-			<hr />
-			<table class="highlight centered">
+			<table class="cart-table highlight centered">
 				<thead>
-					<tr>
+					<tr class="teal lighten-5">
 						<th>Item</th>
 						<th>Quantity</th>
 						<th>Price</th>
@@ -55,7 +54,10 @@
 		</div>
 	</div>
 </div>
-
-<div id="empty-cart" style="text-align: center">
-	<h4>Cart is empty</h4>
+<div class="container section">
+	<div ng-if="!cart.rows" style="text-align: center">
+		<img src="assets/images/emptycart.png" width="200px" />
+		<p>Add an item to get started</p>
+		<a href="#" class="waves-effect btn">Okay</a>
+	</div>
 </div>

@@ -54,10 +54,9 @@
 			</form>
 		</div>
 
-		<hr />
-		<table class="highlight centered">
+		<table ng-if="addr.address" class="highlight centered">
 			<thead>
-				<tr>
+				<tr class="teal lighten-5">
 					<th>Pin</th>
 					<th>City</th>
 					<th>Zone</th>
@@ -81,6 +80,12 @@
 				</tr>
 			</tbody>
 		</table>
+		<div ng-if="!addr.address" class="container section">
+			<div style="text-align: center">
+				<img src="assets/images/address.svg" width="200px" />
+				<p><b>No address has been added</b></p>
+			</div>
+		</div>
 	</div>
 </div>
 

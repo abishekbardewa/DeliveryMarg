@@ -2,7 +2,7 @@
 	<!-- <h6 class="blue-text text-darken-2 center-align">
 		<span style="padding: 10px; border: 1px solid #e0e0e0; background: #f9f9f9">Your Order Details</span>
 	</h6> -->
-	<div class="section">
+	<div ng-if="ord.order_id" class="section">
 		<ul class="collapsible">
 			<li ng-repeat="o in orders" ng-click="getOrders(o.order_id)">
 				<div class="collapsible-header deep-orange-text accent-4" style="display: block; padding: 10px 10px 0px 10px">
@@ -60,9 +60,12 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="container section">
+		<div ng-if="!ord.order_id" style="text-align: center">
+			<img src="assets/images/order.svg" width="200px" />
+			<p><b>Your Order is empty</b></p>
+			<a href="#" class="waves-effect btn">Okay</a>
+		</div>
+	</div>
 </div>
-<script>
-	$(document).ready(function () {
-		$('.collapsible').collapsible();
-	});
-</script>

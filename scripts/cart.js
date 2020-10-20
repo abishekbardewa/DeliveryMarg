@@ -6,36 +6,16 @@ app.controller('cart', [
 
 	function ($scope, $rootScope, $http, $routeParams) {
 		var api = $rootScope.site_url + 'cart';
-		// $scope.cartItem = {};
-		// if ($scope.cartItem !== {}) {
-		// 	$('#cart').css('display', 'block');
-		// 	$('#empty-cart').css('display', 'none');
-		// }
-		//Total cart contents and Total Cart Price
-		$scope.fetchJson = () => {
-			$http.post(api + '/fetchJson').then(function (response) {
-				$scope.cart = response.data;
-				$('#cartTotal1').html(response.data.rows);
-				$('#cartTotal2').html(response.data.rows);
-			});
-		};
-		$scope.fetchJson();
 
 		//Items Added in cart
-		$scope.loader = () => {
-			$http.post(api + '/view').then(function (response) {
-				// console.log(response.data);
-				if (response.data) {
-					$('#cart').css('display', 'block');
-					$('#empty-cart').css('display', 'none');
-					$scope.cartItem = response.data;
-				} else {
-					$('#cart').css('display', 'none');
-					$('#empty-cart').css('display', 'block');
-				}
-			});
-		};
-		$scope.loader();
+		// $scope.loader = () => {
+		// 	$scope.loaderInit();
+		// 	$http.post(api + '/view').then(function (response) {
+		// 		$scope.cartItem = response.data;
+		// 		console.log($scope.cartItem);
+		// 	});
+		// };
+		// $scope.loader();
 
 		//Remove Single Items from Cart
 		$scope.deleteItem = (data) => {
@@ -47,10 +27,9 @@ app.controller('cart', [
 						outDuration: 375,
 						classes: 'pink darken-1',
 					});
-					$scope.loader();
-					$scope.fetchJson();
-					// $('#cart').css('display', 'none');
-					// $('#empty-cart').css('display', 'block');
+
+					// $scope.loader();
+					$scope.loaderInit();
 				}
 			});
 		};
@@ -70,10 +49,8 @@ app.controller('cart', [
 							swal('Poof! Your address has been deleted!', {
 								icon: 'success',
 							});
-							$scope.loader();
-							$scope.fetchJson();
-							// $('#cart').css('display', 'none');
-							// $('#empty-cart').css('display', 'block');
+							// $scope.loader();
+							$scope.loaderInit();
 						});
 					} else {
 						swal('Your address file is safe!');
@@ -85,10 +62,3 @@ app.controller('cart', [
 		};
 	},
 ]);
-// $http.get(api + '/deleteCart').then(function (response) {
-
-// 	$scope.loader();
-// 	$scope.fetchJson();
-// 	// $('#cart').css('display', 'none');
-// 	// $('#empty-cart').css('display', 'block');
-// });

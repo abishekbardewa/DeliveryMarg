@@ -10,6 +10,7 @@ app.controller('order', [
 		//Getting All Orders of a user
 		$http.get(api + '/view?data').then(function (response) {
 			$scope.orders = response.data;
+			$scope.ord = $scope.orders[0];
 		});
 
 		//Getting all order on single order id
@@ -21,5 +22,6 @@ app.controller('order', [
 				console.log($scope.orderItem);
 			});
 		};
+		$('.collapsible').collapsible();
 	},
 ]);

@@ -1,5 +1,5 @@
-<div id="wish">
-	<div class="container section" ng-controller="wishlist">
+<div ng-controller="wishlist">
+	<div class="container section" ng-if="wl.name">
 		<div class="row">
 			<h6 class="center-align"><b>Your Wish List ({{wishCount}})</b></h6>
 		</div>
@@ -16,17 +16,30 @@
 			<tbody>
 				<tr ng-repeat="w in wish">
 					<td>{{w.name}}</td>
-					<td><img src="{{img_url}}/w/uploads/products/{{w.img}}" width="60" /></td>
+					<td><img src="{{img_url}}/w/uploads/products/{{w.img}}" width="60px" /></td>
 					<td>{{w.price}}</td>
 					<td>
 						<!-- <a href="javascript:void(0)" ng-click="deleteWish()"><i class="material-icons red-text accent-4">delete_forever</i></a> -->
 						<a href="javascript:void(0)" ng-click="deleteWish(w.p_id)"><i class="material-icons red-text accent-4">delete_forever</i></a>
 					</td>
-					<td>
-						<button class="btn" ng-controller="products" ng-click="addToCart(w.p_id)">Add to cart</button>
+					<td class="btns">
+						<span
+							><a class="waves-effect btn white green-text darken-1" ng-controller="products" ng-click="addToCart(w.p_id)"
+								><i class="material-icons left">add</i><span>Add</span></a
+							></span
+						>
 					</td>
 				</tr>
 			</tbody>
 		</table>
+	</div>
+
+	<div ng-if="!wl.name" class="container section">
+		<div style="text-align: center">
+			<img src="assets/images/wishlist.png" width="200px" />
+			<p><b>Your Wishlist is empty</b></p>
+			<p>Add an item to get started</p>
+			<a href="#" class="waves-effect btn">Okay</a>
+		</div>
 	</div>
 </div>

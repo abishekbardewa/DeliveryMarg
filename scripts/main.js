@@ -15,19 +15,17 @@ app.controller('main', [
 			});
 			$http.post(api + '/cart/view').then(function (response) {
 				$scope.cartItem = response.data;
-				console.log($scope.cartItem);
+				// console.log($scope.cartItem);
 			});
 			//User Details
 			$http.post(api + '/users/view').then(function (response) {
-				console.log(response.data[0]);
+				// console.log(response.data[0]);
 				$scope.user = response.data[0];
 			});
-			// //User Address
+
+			//Address Details
 			// $http.get(api + '/users/viewAddress').then(function (response) {
-			// 	console.log('Address', response.data);
 			// 	$scope.address = response.data;
-			// 	// console.log('Address 1', $scope.address[0]);
-			// 	// console.log('Address 1', $scope.address[1]);
 			// 	$scope.addr = $scope.address[0];
 			// });
 		};

@@ -30,6 +30,14 @@ app.config([
 				templateUrl: 'pages/category.html',
 				controller: 'category',
 			})
+			.when('/checkout', {
+				templateUrl: 'pages/checkout.html',
+				controller: 'checkout',
+			})
+			.when('/payment', {
+				templateUrl: 'pages/payment.html',
+				controller: 'payment',
+			})
 			.otherwise('/home');
 	},
 ]);

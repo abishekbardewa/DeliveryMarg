@@ -38,6 +38,7 @@ app.controller('login', [
 			}).then(function (response) {
 				if (response.data === '1') {
 					swal('Good Job!', 'Sign up Completed!', 'success');
+					$scope.errorMsg = '';
 				} else {
 					$scope.errorMsg = response.data;
 				}
@@ -57,12 +58,14 @@ app.controller('login', [
 						outDuration: 375,
 						classes: 'green accent-4',
 					});
+					$scope.errorMsg = '';
 				} else if (response.data === '0') {
 					M.toast({
 						html: 'Unauthorise User !!!',
 						outDuration: 375,
 						classes: 'red',
 					});
+					$scope.errorMsg = '';
 				} else {
 					$scope.errorMsg = response.data;
 				}
@@ -100,7 +103,7 @@ app.controller('login', [
 		//Getting Session Info
 		$http.get(api + '/sessionData').then(function (response) {
 			$scope.sData = response.data;
-			console.log('Session: ', $scope.sData);
+			// console.log('Session: ', $scope.sData);
 		});
 	},
 ]);

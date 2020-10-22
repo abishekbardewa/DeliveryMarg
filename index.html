@@ -10,6 +10,7 @@
 		<link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
 		<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;800&display=swap" rel="stylesheet" />
+		<!-- Font Awesome Icon -->
 	</head>
 	<body ng-app="DelMarg" ng-controller="main">
 		<nav class="white lighten-1" role="navigation">
@@ -18,14 +19,21 @@
 					><img class="responsive-img" src="assets/images/deliverymarg.png" style="height: 50px"
 				/></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a class="black-text" href="#">Orders</a></li>
-					<li><a class="black-text" href="#">Payment</a></li>
-					<li><a class="black-text" href="#">Chat Support</a></li>
-					<li><a class="black-text" href="#!/profile" ng-if="user.name">Profile</a></li>
 					<li>
-						<a class="black-text modal-trigger" href="#profile" ng-if="user.name">Welcome {{user.name}}</a>
+						<a class="black-text" href="#"><strong>Marg for Business</strong></a>
+					</li>
+					<li>
+						<a class="black-text" href="#"><strong>Marg for Partner</strong></a>
+					</li>
+					<li>
+						<a class="black-text" href="#"><strong>Chat Support</strong></a>
+					</li>
+					<li>
+						<a class="black-text modal-trigger" href="#!/profile/#profile-info" ng-if="user.name"
+							><img ng-src="{{img_url}}uploads/users/thumb/{{user.img}}" width="40px" alt="" class="circle" style="vertical-align: middle" />
+						</a>
 
-						<a class="black-text modal-trigger" href="#modalSignin" ng-if="!user.name">Login</a>
+						<a class="black-text modal-trigger" href="#modalSignin" ng-if="!user.name"><strong>Login</strong></a>
 					</li>
 					<li>
 						<a class="black-text modal-trigger" href="#!/cart">
@@ -43,21 +51,27 @@
 							</div>
 							<div class="user-info">
 								<div class="user-name">
-									<p class="title" style="color: #000"><br /><b>{{user.name}}</b><br /><b>{{user.email}}</b></p>
+									<p class="title" style="color: #000">
+										<br /><strong>{{user.name}}<br />{{user.email}}</strong>
+									</p>
 								</div>
 								<div class="user-mob">
-									<a class="left" href="#!/profile/#profile-info"><strong>View Profile</strong></a>
-									<a href="#!" class="right"><strong>Logout</strong></a>
+									<a class="left" href="#!/profile/#profile-info">View Profile</a>
+									<a href="#!" class="right">Logout</a>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li ng-if="!user.name"><a class="black-text modal-trigger" href="#modalSignin">Login</a></li>
-					<li><a href="#">Orders</a></li>
-					<li><a href="#">Payment</a></li>
-					<li><a href="#">Chat Support</a></li>
-					<li><a href="#!/home">home</a></li>
-					<!-- <li><a href="#!/profile">Profile</a></li> -->
+					<li>
+						<a class="black-text" href="#"><strong>Marg for Business</strong></a>
+					</li>
+					<li>
+						<a class="black-text" href="#"><strong>Marg for Partner</strong></a>
+					</li>
+					<li>
+						<a class="black-text" href="#"><strong>Chat Support</strong></a>
+					</li>
 				</ul>
 				<a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"> <i class="material-icons">menu</i></a>
 				<a href="#!/cart" class="hide-on-med-and-up black-text right"
@@ -254,5 +268,7 @@
 		<script src="scripts/products.js"></script>
 		<script src="scripts/order.js"></script>
 		<script src="scripts/address.js"></script>
+		<script src="scripts/checkout.js"></script>
+		<script src="scripts/payment.js"></script>
 	</body>
 </html>

@@ -12,6 +12,7 @@ app.controller('address', [
 			$http.get(api + '/viewAddress').then(function (response) {
 				$scope.address = response.data;
 				$scope.addr = $scope.address[0];
+				console.log($scope.address);
 			});
 		};
 		$scope.loader();
@@ -43,18 +44,15 @@ app.controller('address', [
 						classes: ' green accent-4',
 					});
 					// $scope.resetForm();
+					$scope.errorMsg = '';
 				} else if (response.data === '0') {
-					M.toast({
-						html: 'Address Not Saved',
-						outDuration: 375,
-						classes: 'red lighten-1',
-					});
-				} else {
 					M.toast({
 						html: 'Please Sign In to add address',
 						outDuration: 375,
 						classes: 'pink darken-1',
 					});
+				} else {
+					$scope.errorMsg = response.data;
 				}
 			});
 		};

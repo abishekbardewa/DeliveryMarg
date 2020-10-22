@@ -15,7 +15,7 @@ app.controller('profile', [
 					user.dob = new Date(user.dob);
 					$scope.u = user;
 				}
-				console.log(uInfo);
+				// console.log(uInfo);
 			});
 		};
 
@@ -32,6 +32,7 @@ app.controller('profile', [
 					if (data === '1') {
 						$scope.loader();
 						swal('Good Job!', 'Profile Updated!', 'success');
+						$scope.errorMsg = '';
 					} else {
 						$scope.errorMsg = data;
 					}

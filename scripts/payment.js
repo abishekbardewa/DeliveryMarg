@@ -1,4 +1,4 @@
-app.controller('home', [
+app.controller('payment', [
 	'$scope',
 	'$rootScope',
 	'$http',

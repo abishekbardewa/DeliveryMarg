@@ -1,5 +1,11 @@
 <div class="container-fluid" ng-controller="address">
-	<div class="input-field col s12 m6 l6 align-center">
+	<div ng-if="!addr.address" class="container section">
+		<div style="text-align: center">
+			<img src="assets/images/address.svg" width="200px" />
+			<p><b>No address has been added</b></p>
+		</div>
+	</div>
+	<div class="col s12 m12 l12 center-align">
 		<button class="waves-effect waves-light btn" id="add-btn"><i class="material-icons left">add_circle_outline</i>Add New Address</button>
 	</div>
 	<div class="section">
@@ -43,10 +49,9 @@
 						<textarea id="address" name="address" ng-model="x.address" class="materialize-textarea"></textarea>
 						<label for="address">Address</label>
 					</div>
-					<!-- <div class="input-field col s12 l4 offset-l4 m4 offset-m4 grey lighten-4">
-
-					</div> -->
-					<div class="input-field col s12 m6 l6 align-center">
+				</div>
+				<div class="row">
+					<div class="input-field col s12 center-align">
 						<span class="red-text" ng-bind-html="errorMsg"></span>
 						<button type="submit" class="waves-effect btn" ng-click="saveAddress(x)" ng-disabled="form.$invalid">Add Address</button>
 					</div>
@@ -80,12 +85,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div ng-if="!addr.address" class="container section">
-			<div style="text-align: center">
-				<img src="assets/images/address.svg" width="200px" />
-				<p><b>No address has been added</b></p>
-			</div>
-		</div>
 	</div>
 </div>
 

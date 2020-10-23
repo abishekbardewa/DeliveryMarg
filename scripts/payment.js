@@ -2,13 +2,13 @@ app.controller('payment', [
 	'$scope',
 	'$rootScope',
 	'$http',
-	function ($scope, $rootScope, $http) {
+	'$routeParams',
+	function ($scope, $rootScope, $http, $routeParams) {
 		var api = $rootScope.site_url + 'category';
-
-		$http.get(api + '/view?data=cat_id,name,img&parent=1').then(function (response) {
-			// console.log(response);
-			$scope.categories = response.data;
-		});
-		$('.materialboxed').materialbox();
+		$scope.shipData = $routeParams.a;
+		console.log('Payment Controller', $scope.shipData);
+		// $scope.paymentHandler = (data) => {
+		// 	console.log(data);
+		// };
 	},
 ]);

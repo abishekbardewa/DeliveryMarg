@@ -1,0 +1,175 @@
+<nav class="dnav">
+	<div class="nav-wrapper">
+		<div class="container col s12">
+			<a href="#!" class="breadcrumb">Home</a>
+			<a href="#!" class="breadcrumb"><strong>Checkout</strong></a>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col col s12 l8 m8">
+			<h5 class="">Select a shipping address</h5>
+			<br />
+			<div ng-controller="address">
+				<div class="row">
+					<div class="col s12 section">
+						<div ng-if="!addr.address" class="center-align">
+							<img src="assets/images/address.svg" width="200px" />
+							<p><b>No address has been added</b></p>
+						</div>
+						<div class="input-field center-align chk-btn">
+							<button class="waves-effect btn" id="add-btn"><i class="material-icons left">add_circle_outline</i>Add New Address</button>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<div class="row">
+						<form id="address-section" name="form" class="col s12" autocomplete="off" novalidate>
+							<div class="row">
+								<input ng-model="x.addr_id" name="addr_id" hidden />
+
+								<div class="input-field col s12 m4 l4">
+									<input id="name" name="name" ng-model="x.name" type="text" class="validate" />
+									<label for="name">First Name </label>
+								</div>
+								<div class="input-field col s12 m4 l4">
+									<input id="last_name" name="lname" ng-model="x.lname" type="text" class="validate" />
+									<label for="last_name">Last Name</label>
+								</div>
+								<div class="input-field col s12 m4 l4">
+									<input id="pin" name="pin" ng-model="x.pin" type="text" class="validate" />
+									<label for="pin">Pin</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12 m4 l4">
+									<input id="city" name="city" ng-model="x.city" type="text" class="validate" />
+									<label for="city">City</label>
+								</div>
+								<div class="input-field col s12 m4 l4">
+									<select class="browser-default" ng-model="x.country_id" name="country_id">
+										<option disabled selected>Select Your Country</option>
+										<option ng-repeat="c in country" value="{{c.country_id}}">{{c.name}}</option>
+									</select>
+								</div>
+								<div class="input-field col s12 m4 l4">
+									<select class="browser-default" ng-model="x.zone_id" name="zone_id">
+										<option disabled selected>Select Your Zone</option>
+										<option ng-repeat="z in zone" value="{{z.zone_id}}">{{z.name}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12 m6 l6">
+									<textarea id="address" name="address" ng-model="x.address" class="materialize-textarea"></textarea>
+									<label for="address">Address</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12 center-align">
+									<span class="red-text" ng-bind-html="errorMsg"></span>
+									<button type="submit" class="waves-effect btn" ng-click="saveAddress(x)" ng-disabled="form.$invalid">Add Address</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div ng-if="addr.address">
+						<table class="highlight centered">
+							<thead>
+								<tr class="teal lighten-5">
+									<th>Deliver Here</th>
+									<th>Name</th>
+									<th>Address</th>
+									<th>Pin Code</th>
+									<th>State</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr ng-repeat="a in address">
+									<td>
+										<!-- <div class="input-field col s12 m4 l4"> -->
+										<label>
+											<input class="with-gap" name="deliver" type="radio" />
+											<span></span>
+										</label>
+										<!-- </div> -->
+									</td>
+									<td>{{a.name}}&nbsp{{a.lame}}</td>
+									<td>{{a.address}}</td>
+									<td>{{a.pin}} - {{a.city}}</td>
+									<td>{{a.zname}} - {{a.cname}}</td>
+									<!-- <td>{{a.address}}</td> -->
+									<td>
+										<a href="javascript:void(0)" ng-click="updateAddress(a)">
+											<i class="material-icons blue-text lighten-3 accent-4 blue-grey lighten-4">mode_edit</i></a
+										><a href="javascript:void(0)" ng-click="deleteAddress(a.addr_id)"
+											><i class="material-icons red-text accent-4 blue-grey lighten-4">delete_forever</i></a
+										>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="container-fluid section">
+							<div class="row">
+								<div class="right-align">
+									<a href="#!/cart" class="waves-effect medium btn" id="add-btn"
+										><i class="material-icons left">keyboard_arrow_left</i>Back to cart</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col s12 l3 push-l1 m3" style="line-height: 2">
+			<h6><b>Order Summary</b></h6>
+			<div class="order-summary">
+				<div class="divider"></div>
+				<div>
+					<span class="left">Total item price</span>
+					<span class="right">&#x20B9; 2000</span>
+				</div>
+				<div>
+					<span class="left">Total discount</span>
+					<span class="right">&#x20B9; 100</span>
+				</div>
+				<div>
+					<span class="left">Shipping charge</span>
+					<span class="right">&#x20B9; 500</span>
+				</div>
+				<div class="divider"></div>
+				<div>
+					<span class="left"><b>Total</b></span>
+					<span class="right"><b>&#x20B9; 53500</b></span>
+				</div>
+				<div class="divider"></div>
+			</div>
+
+			<div class="row section">
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="email" type="email" class="validate" />
+							<label for="email">Promo code</label>
+							<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
+						</div>
+						<div class="input-field col s12">
+							<button href="#!/payment" class="waves-effect btn-large orange darken-2 white-text" style="width: 100%">
+								<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--
+<script>
+
+</script> -->

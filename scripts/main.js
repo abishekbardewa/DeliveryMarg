@@ -23,11 +23,11 @@ app.controller('main', [
 				$scope.user = response.data[0];
 			});
 
-			//Address Details
-			// $http.get(api + '/users/viewAddress').then(function (response) {
-			// 	$scope.address = response.data;
-			// 	$scope.addr = $scope.address[0];
-			// });
+			// Address Details
+			$http.get(api + '/users/viewAddress').then(function (response) {
+				$scope.address = response.data;
+				$scope.addr = $scope.address[0];
+			});
 		};
 
 		$scope.loaderInit();

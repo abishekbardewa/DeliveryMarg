@@ -9,7 +9,6 @@ app.controller('cart', [
 
 		//Items Added in cart
 		// $scope.loader = () => {
-		// 	$scope.loaderInit();
 		// 	$http.post(api + '/view').then(function (response) {
 		// 		$scope.cartItem = response.data;
 		// 		console.log($scope.cartItem);
@@ -46,14 +45,14 @@ app.controller('cart', [
 				}).then((willDelete) => {
 					if (willDelete) {
 						$http.get(api + '/deleteCart').then(function (response) {
-							swal('Poof! Your address has been deleted!', {
+							swal('Poof! Your cart has been deleted!', {
 								icon: 'success',
 							});
 							// $scope.loader();
 							$scope.loaderInit();
 						});
 					} else {
-						swal('Your address file is safe!');
+						swal('Your cart file is safe!');
 					}
 				});
 			} else {

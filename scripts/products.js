@@ -17,10 +17,25 @@ app.controller('products', [
 			console.log($scope.products);
 		});
 
-		$scope.addToCart = function (p_id) {
-			console.log(p_id);
-			$http.get(cartApi + '/add/' + p_id).then(function (response) {
-				$scope.loaderInit();
+		//Adding product to cart
+		$scope.addToCart = function (data) {
+			console.log(data);
+			$http.get(cartApi + '/add/' + data).then(function (response) {
+				if (response.data === '1') {
+					// $scope.loader();
+					$scope.loaderInit();
+					M.toast({
+						html: 'Added to cart',
+						outDuration: 375,
+						classes: 'green accent-4',
+					});
+				} else if (response.data === '0') {
+					M.toast({
+						html: 'Item not added to cart',
+						outDuration: 375,
+						classes: 'red',
+					});
+				}
 			});
 		};
 	},

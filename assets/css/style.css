@@ -415,3 +415,12 @@ del {
 		margin: 5px 0px;
 	}
 }
+
+.order-summary div {
+	display: flow-root;
+}
+
+.order-summary div,
+span {
+	font-weight: 500;
+}

@@ -34,7 +34,11 @@ app.config([
 				templateUrl: 'pages/checkout.html',
 				controller: 'checkout',
 			})
-			.when('/payment', {
+			.when('/shipping', {
+				templateUrl: 'pages/shipping.html',
+				controller: 'shipping',
+			})
+			.when('/payment/:checkout', {
 				templateUrl: 'pages/payment.html',
 				controller: 'payment',
 			})

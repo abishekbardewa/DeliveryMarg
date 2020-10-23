@@ -12,8 +12,6 @@ app.controller('wishlist', [
 			$http.get(api + '/view').then(function (response) {
 				$scope.wish = response.data;
 				$scope.wl = $scope.wish[0];
-				console.log('WISHLIST', $scope.wl);
-				console.log('WISHLIST', $scope.wish);
 			});
 		};
 		$scope.loader();

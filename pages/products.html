@@ -33,7 +33,9 @@
 	</div>
 
 	<div ng-if="cart.rows" class="col l6 hide-on-med-and-down" ng-controller="cart" style="border-left: 1px solid white">
-		<h6><b>Your cart is ready ({{cart.rows}})</b></h6>
+		<h6>
+			<b>Your cart is ready <span class="grey-text lighten-4">{{cart.rows}} Item(s)</span></b>
+		</h6>
 		<table class="highlight centered">
 			<thead>
 				<tr class="teal lighten-5">
@@ -60,7 +62,7 @@
 		<div class="right-align">
 			<h6>Subtotal: <strong>&#x20B9; {{cart.total}}</strong></h6>
 			<div class="">
-				<a href="#!checkout" class="waves-effect green btn white-text"><i class="material-icons left">check</i>Checkout</a>
+				<a href="#!/checkout" class="waves-effect green btn white-text"><i class="material-icons left">check</i>Checkout</a>
 			</div>
 		</div>
 	</div>

@@ -20,7 +20,7 @@ app.controller('login', [
 				if (response.data === '1') {
 					window.location.reload();
 				} else if (response.data === '0') {
-					$scope.errorMsg = 'Unauthorise User !!!';
+					$scope.errorMsg = 'Unauthorize User !!!';
 				} else {
 					$scope.errorMsg = response.data;
 				}
@@ -103,7 +103,7 @@ app.controller('login', [
 		//Getting Session Info
 		$http.get(api + '/sessionData').then(function (response) {
 			$scope.sData = response.data;
-			// console.log('Session: ', $scope.sData);
+			console.log('Session: ', $scope.sData);
 		});
 	},
 ]);

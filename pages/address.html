@@ -1,3 +1,4 @@
+<br />
 <div class="container-fluid" ng-controller="address">
 	<div ng-if="!addr.address" class="container section">
 		<div style="text-align: center">
@@ -8,7 +9,7 @@
 	<div class="col s12 m12 l12 center-align">
 		<button class="waves-effect waves-light btn" id="add-btn"><i class="material-icons left">add_circle_outline</i>Add New Address</button>
 	</div>
-	<div class="section">
+	<div class="container section">
 		<div class="row">
 			<form id="address-section" name="form" class="col s12" autocomplete="off" novalidate>
 				<div class="row">
@@ -87,11 +88,3 @@
 		</table>
 	</div>
 </div>
-
-<script>
-	document.getElementById('add-btn').addEventListener('click', showAddForm);
-
-	function showAddForm() {
-		document.getElementById('address-section').classList.add('visible');
-	}
-</script>

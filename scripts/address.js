@@ -8,14 +8,14 @@ app.controller('address', [
 		var api = $rootScope.site_url + 'users';
 
 		//User Address
-		$scope.loader = () => {
-			$http.get(api + '/viewAddress').then(function (response) {
-				$scope.address = response.data;
-				$scope.addr = $scope.address[0];
-				console.log($scope.address);
-			});
-		};
-		$scope.loader();
+		// $scope.loader = () => {
+		// 	$http.get(api + '/viewAddress').then(function (response) {
+		// 		$scope.address = response.data;
+		// 		$scope.addr = $scope.address[0];
+		// 		console.log($scope.address);
+		// 	});
+		// };
+		// $scope.loader();
 
 		//Getting List of all Country
 		$http.get(api + '/viewCountry').then(function (response) {
@@ -36,8 +36,8 @@ app.controller('address', [
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			}).then(function (response) {
 				if (response.data === '1') {
-					$scope.loader();
-					// $scope.loaderInit();
+					// $scope.loader();
+					$scope.loaderInit();
 					M.toast({
 						html: 'Address Added',
 						outDuration: 375,
@@ -45,6 +45,7 @@ app.controller('address', [
 					});
 					// $scope.resetForm();
 					$scope.errorMsg = '';
+					showAddForm();
 				} else if (response.data === '0') {
 					M.toast({
 						html: 'Please Sign In to add address',
@@ -78,13 +79,18 @@ app.controller('address', [
 						swal('Poof! Your address has been deleted!', {
 							icon: 'success',
 						});
-						$scope.loader();
-						// $scope.loaderInit();
+						// $scope.loader();
+						$scope.loaderInit();
 					});
 				} else {
 					swal('Your address file is safe!');
 				}
 			});
 		};
+
+		document.getElementById('add-btn').addEventListener('click', showAddForm);
+		function showAddForm() {
+			document.getElementById('address-section').classList.toggle('visible');
+		}
 	},
 ]);

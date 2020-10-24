@@ -1,4 +1,4 @@
-<nav class="dnav">
+<nav ng-if="!user.name" class="dnav">
 	<div class="nav-wrapper">
 		<div class="container col s12">
 			<a href="#!" class="breadcrumb">Home</a>
@@ -6,14 +6,14 @@
 		</div>
 	</div>
 </nav>
-<div class="container">
+<div ng-if="!user.name" class="container">
 	<div class="row">
 		<div class="col col s12 l8 m8">
 			<h5 class="">Checkout</h5>
 			<br />
 			<div class="row">
 				<div class="col s12 section">
-					<div ng-if="!user.name" class="input-field center-align">
+					<div class="input-field center-align">
 						<h6><b>Please sign in or sign up to continue</b></h6>
 						<a class="waves-effect btn yellow lighten-5 modal-trigger" href="#modalSignin"><i class="material-icons left">lock</i>Sign in</a>
 						<a class="waves-effect btn yellow lighten-5 modal-trigger" href="#modalSignup"><i class="material-icons left">person_add</i>Sign up</a>
@@ -55,7 +55,12 @@
 							<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
 						</div>
 						<div class="input-field col s12">
-							<a href="#!/shipping" class="waves-effect btn-large orange darken-2 white-text" ng-disabled="!user.name" style="width: 100%">
+							<a
+								href="#!/shipping"
+								class="waves-effect btn-large orange darken-2 white-text"
+								ng-disabled="!user.name || !addr.address"
+								style="width: 100%"
+							>
 								<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
 							</a>
 						</div>
@@ -65,3 +70,4 @@
 		</div>
 	</div>
 </div>
+<div ng-if="user.name" ng-include="'pages/shipping.html'"></div>

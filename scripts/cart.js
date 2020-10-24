@@ -59,5 +59,7 @@ app.controller('cart', [
 				swal('Your cart is empty! Nothing to delete');
 			}
 		};
+
+		//Proceed Further
 	},
 ]);

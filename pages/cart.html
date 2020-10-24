@@ -11,7 +11,7 @@
 		<div class="section">
 			<div class="row">
 				<h5 class="left">
-					<b>Your Cart is ready <span class="grey-text lighten-4">{{cart.rows}} Item(s)</span></b>
+					<b>Your Cart is ready <span class="grey-text lighten-4" style="font-size: 14px">{{cart.rows}} Item(s)</span></b>
 				</h5>
 				<button id="remove-all" href="javascript:void(0)" class="right waves-effect red btn white-text" ng-click="deleteCart(cart.rows)">
 					<i class="material-icons left">remove_shopping_cart</i>Remove all
@@ -50,7 +50,7 @@
 					<a class="waves-effect grey lighten-3 btn black-text"><i class="material-icons left">shopping_basket</i>Shop More</a>
 					<!-- </div>
       <div class="col s3"> -->
-					<a href="#!/checkout" class="waves-effect green btn white-text"><i class="material-icons left">check</i>Checkout</a>
+					<a href="#!/checkout" class="waves-effect green btn white-text" ng-click="proceed()"><i class="material-icons left">check</i>Checkout</a>
 				</div>
 			</div>
 		</div>

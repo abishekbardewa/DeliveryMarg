@@ -2,7 +2,7 @@
 	<div class="nav-wrapper">
 		<div class="container col s12">
 			<a href="#!" class="breadcrumb">Home</a>
-			<a href="#!" class="breadcrumb"><strong>Checkout</strong></a>
+			<a href="#!" class="breadcrumb"><strong>Shipping</strong></a>
 		</div>
 	</div>
 </nav>
@@ -126,9 +126,9 @@
 			</div>
 		</div>
 
-		<div class="col s12 l3 push-l1 m3" style="line-height: 2">
+		<div class="col s12 l3 push-l1 m3">
 			<h6><b>Order Summary</b></h6>
-			<div class="order-summary">
+			<div class="order-summary" style="line-height: 2">
 				<div class="divider"></div>
 				<div>
 					<span class="left">Total item price</span>
@@ -159,7 +159,12 @@
 							<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
 						</div>
 						<div class="input-field col s12">
-							<button href="#!/payment" class="waves-effect btn-large orange darken-2 white-text" style="width: 100%">
+							<button
+								class="waves-effect btn-large orange darken-2 white-text"
+								ng-click=""
+								ng-disabled="!user.name || !addr.address"
+								style="width: 100%"
+							>
 								<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
 							</button>
 						</div>
@@ -168,8 +173,8 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!--
+	<!--
 <script>
 
 </script> -->
+</div>

@@ -1,0 +1,39 @@
+<h6><b>Order Summary</b></h6>
+<div class="order-summary" style="line-height: 2">
+	<div class="divider"></div>
+	<div>
+		<span class="left">Total item price</span>
+		<span class="right">&#x20B9; 2000</span>
+	</div>
+	<div>
+		<span class="left">Total discount</span>
+		<span class="right">&#x20B9; 100</span>
+	</div>
+	<div>
+		<span class="left">Shipping charge</span>
+		<span class="right">&#x20B9; 500</span>
+	</div>
+	<div class="divider"></div>
+	<div>
+		<span class="left"><b>Total</b></span>
+		<span class="right"><b>&#x20B9; 53500</b></span>
+	</div>
+	<div class="divider"></div>
+</div>
+
+<div class="row section">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="email" type="email" class="validate" />
+				<label for="email">Promo code</label>
+				<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
+			</div>
+			<div class="input-field col s12">
+				<a href="#!/shipping" class="waves-effect btn-large orange darken-2 white-text" ng-disabled="!user.name || !addr.address" style="width: 100%">
+					<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
+				</a>
+			</div>
+		</div>
+	</form>
+</div>

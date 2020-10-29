@@ -55,14 +55,14 @@
 							<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
 						</div>
 						<div class="input-field col s12">
-							<a
-								href="#!/shipping"
+							<button
+								ng-controller="cart"
 								class="waves-effect btn-large orange darken-2 white-text"
 								ng-disabled="!user.name || !addr.address"
 								style="width: 100%"
 							>
-								<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
-							</a>
+								<i class="material-icons right">keyboard_arrow_right</i>Proceed to shipping
+							</button>
 						</div>
 					</div>
 				</form>

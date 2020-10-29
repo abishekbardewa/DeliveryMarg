@@ -3,8 +3,9 @@ app.controller('cart', [
 	'$rootScope',
 	'$http',
 	'$routeParams',
+	'$window',
 
-	function ($scope, $rootScope, $http, $routeParams) {
+	function ($scope, $rootScope, $http, $routeParams, $window) {
 		var api = $rootScope.site_url + 'cart';
 
 		//Items Added in cart
@@ -60,6 +61,39 @@ app.controller('cart', [
 			}
 		};
 
-		//Proceed Further
+		//Proceed to Shipping
+		// $scope.proceedToShip = (data) => {
+		// 	console.log('hello');
+		$http.get(api + '/shipping?addr' + $scope.addr).then(function (response) {
+			// console.log(response);
+		});
+		// };
+
+		//Proceed to Payment
+		$scope.proceedToPayment = () => {
+			// const checked = document.getElementById('address-checked').value;
+			$('#form').submit(function () {
+				$.ajax({
+					type: 'POST',
+					url: api + '/shipping',
+					data: $('#form').serialize(),
+					// beforeSend: function () {
+					// 	$('#result').html('<font color="orange">Submitting your informations... Please Wait...</font>');
+					// },
+					success: function (data) {
+						// $('#result').empty();
+						// $('#result').html(data);
+
+						if (data === '1') {
+							console.log(data);
+							$window.location.href = 'http://127.0.0.1/deliveryMarg/#!/payment';
+						} else if (data === '0') {
+							console.log(data);
+							$scope.shipErrorMsg = 'Please select a shipping address';
+						}
+					},
+				});
+			});
+		};
 	},
 ]);

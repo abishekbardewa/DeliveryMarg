@@ -27,6 +27,7 @@ app.controller('main', [
 			$http.get(api + '/users/viewAddress').then(function (response) {
 				$scope.address = response.data;
 				$scope.addr = $scope.address[0];
+				console.log($scope.address);
 			});
 		};
 

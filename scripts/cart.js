@@ -71,28 +71,19 @@ app.controller('cart', [
 
 		//Proceed to Payment
 		$scope.proceedToPayment = () => {
-			// const checked = document.getElementById('address-checked').value;
-			$('#form').submit(function () {
-				$.ajax({
-					type: 'POST',
-					url: api + '/shipping',
-					data: $('#form').serialize(),
-					// beforeSend: function () {
-					// 	$('#result').html('<font color="orange">Submitting your informations... Please Wait...</font>');
-					// },
-					success: function (data) {
-						// $('#result').empty();
-						// $('#result').html(data);
-
-						if (data === '1') {
-							console.log(data);
-							$window.location.href = 'http://127.0.0.1/deliveryMarg/#!/payment';
-						} else if (data === '0') {
-							console.log(data);
-							$scope.shipErrorMsg = 'Please select a shipping address';
-						}
-					},
-				});
+			$.ajax({
+				type: 'POST',
+				url: api + '/shipping',
+				data: $('#form').serialize(),
+				success: function (data) {
+					if (data.err === '1') {
+						document.getElementById('shipError').innerHTML = data.msg;
+					} else {
+						console.log(data);
+						$window.location.href = 'http://127.0.0.1/deliveryMarg/#!/payment';
+						$scope.shipCost = data.shipCost;
+					}
+				},
 			});
 		};
 	},

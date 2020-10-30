@@ -1,4 +1,4 @@
-const app = angular.module('DelMarg', ['ngRoute', 'ngSanitize']);
+const app = angular.module('DelMarg', ['ngRoute', 'ngSanitize', 'ngAnimate']);
 
 app.config([
 	'$routeProvider',
@@ -38,7 +38,7 @@ app.config([
 				templateUrl: 'pages/shipping.html',
 				controller: 'shipping',
 			})
-			.when('/payment/:checkout', {
+			.when('/payment', {
 				templateUrl: 'pages/payment.html',
 				controller: 'payment',
 			})

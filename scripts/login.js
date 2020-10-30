@@ -3,8 +3,9 @@ app.controller('login', [
 	'$rootScope',
 	'$http',
 	'$routeParams',
+	'$window',
 
-	function ($scope, $rootScope, $http, $routeParams) {
+	function ($scope, $rootScope, $http, $routeParams, $window) {
 		var api = $rootScope.site_url + 'login';
 		$scope.errorClass = 'red-text';
 

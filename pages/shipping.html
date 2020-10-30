@@ -21,7 +21,6 @@
 						<div class="input-field center-align chk-btn">
 							<button class="waves-effect btn" id="add-btn"><i class="material-icons left">add_circle_outline</i>Add New Address</button>
 						</div>
-						<span class="red-text">{{shipErrorMsg}}</span>
 					</div>
 				</div>
 				<div class="section">
@@ -111,7 +110,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<div class="input-field col s12">
+							<!-- <div class="input-field col s12">
 								<button
 									type="submit"
 									ng-controller="cart"
@@ -122,7 +121,7 @@
 								>
 									<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
 								</button>
-							</div>
+							</div> -->
 						</form>
 						<div class="container-fluid section">
 							<div class="row">
@@ -152,7 +151,7 @@
 				</div>
 				<div>
 					<span class="left">Shipping charge</span>
-					<span class="right">&#x20B9; 500</span>
+					<span class="right">&#x20B9; {{rate}}</span>
 				</div>
 				<div class="divider"></div>
 				<div>
@@ -172,6 +171,7 @@
 						</div>
 					</div>
 				</form>
+				<span class="red-text" id="shipError"></span>
 				<div class="input-field col s12">
 					<button
 						type="submit"

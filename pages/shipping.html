@@ -110,18 +110,6 @@
 									</tr>
 								</tbody>
 							</table>
-							<!-- <div class="input-field col s12">
-								<button
-									type="submit"
-									ng-controller="cart"
-									class="waves-effect btn-large orange darken-2 white-text"
-									ng-click="proceedToPayment()"
-									ng-disabled="!user.name || !addr.address"
-									style="width: 100%"
-								>
-									<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
-								</button>
-							</div> -->
 						</form>
 						<div class="container-fluid section">
 							<div class="row">
@@ -156,7 +144,7 @@
 				<div class="divider"></div>
 				<div>
 					<span class="left"><b>Total</b></span>
-					<span class="right"><b>&#x20B9; 53500</b></span>
+					<span class="right"><b>&#x20B9; {{cart.total}}</b></span>
 				</div>
 				<div class="divider"></div>
 			</div>

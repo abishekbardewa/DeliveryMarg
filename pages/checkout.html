@@ -6,13 +6,18 @@
 		</div>
 	</div>
 </nav>
+
 <div ng-if="!user.name" class="container">
 	<div class="row">
 		<div class="col col s12 l8 m8">
-			<h5 class="">Checkout</h5>
-			<br />
 			<div class="row">
 				<div class="col s12 section">
+					<div style="background: #f8f7f7; padding: 5px 10px 10px 10px">
+						<h5 class=""><b>Checkout</b></h5>
+						<br />
+						<div ng-include="'pages/progress.html'"></div>
+					</div>
+					<br />
 					<div class="input-field center-align">
 						<h6><b>Please sign in or sign up to continue</b></h6>
 						<a class="waves-effect btn yellow lighten-5 modal-trigger" href="#modalSignin"><i class="material-icons left">lock</i>Sign in</a>

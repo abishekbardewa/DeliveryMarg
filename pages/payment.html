@@ -6,54 +6,113 @@
 		</div>
 	</div>
 </nav>
+<div class="container">
+	<div class="row">
+		<div class="col col s12 l8 m8">
+			<div style="background: #f8f7f7; padding: 5px 10px 10px 10px">
+				<h5 class=""><b>Payment</b></h5>
+				<br />
+				<div ng-include="'pages/progress.html'"></div>
+			</div>
+			<br />
+			<h6 class="left"><b>Select a payment method</b></h6>
+			<br /><br /><br />
+			<form id="form" method="post" action="" autocomplete="off" onsubmit="return false">
+				<table class="highlight">
+					<tbody>
+						<tr>
+							<td class="col l1 s1">
+								<label>
+									<input name="payment" class="with-gap" type="radio" />
+									<span></span>
+								</label>
+							</td>
+							<td class="col l11 s11">
+								<b>Rs. 400 <br />Pay Online</b> &nbsp; &nbsp; &nbsp;
+								<img src="assets/images/cards-alt.png" style="height: 30px" />
+							</td>
+						</tr>
+						<tr>
+							<td class="col l1 s1">
+								<label>
+									<input name="payment" class="with-gap" type="radio" />
+									<span></span>
+								</label>
+							</td>
+							<td class="col l11 s11">
+								<b>Rs. 400 <br />Cash on Delivery</b>
+								<img src="assets/images/cash.png" style="height: 40px" />
+							</td>
+						</tr>
+						<tr>
+							<td class="col l1 s1">
+								<label>
+									<input name="payment" class="with-gap" type="radio" />
+									<span></span>
+								</label>
+							</td>
+							<td class="col l11 s11"><b>Store Pickup</b><img src="assets/images/stp.png" style="height: 40px" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<div class="container-fluid section">
+				<div class="row">
+					<div class="right-align">
+						<a href="#!/checkout" class="waves-effect medium btn" id="add-btn"
+							><i class="material-icons left">keyboard_arrow_left</i>Back to shipping</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l3 push-l1 m3">
+			<h6><b>Order Summary</b></h6>
+			<div class="order-summary" style="line-height: 2">
+				<div class="divider"></div>
+				<div>
+					<span class="left">Total item price</span>
+					<span class="right">&#x20B9; 2000</span>
+				</div>
+				<div>
+					<span class="left">Total discount</span>
+					<span class="right">&#x20B9; 100</span>
+				</div>
+				<div>
+					<span class="left">Shipping charge</span>
+					<span class="right">&#x20B9; {{rate}}</span>
+				</div>
+				<div class="divider"></div>
+				<div>
+					<span class="left"><b>Total</b></span>
+					<span class="right"><b>&#x20B9; {{cart.total}}</b></span>
+				</div>
+				<div class="divider"></div>
+			</div>
 
-<div class="container col s12 m6 l4 offset-l4">
-	<span>
-		<h6 class="left"><b>Select a payment method</b></h6>
-	<br /><br /><br />
-	<form id="form" method="post" action="" autocomplete="off" onsubmit="return false">
-		<table class="highlight">
-			<tbody>
-				<tr>
-					<td class="col l1">
-						<label>
-							<input class="with-gap" type="radio" />
-							<span></span>
-						</label>
-					</td>
-					<td class="col l11">
-						<b>Rs. 400 <br />Pay Online</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-						<img src="assets/images/cards-alt.png" style="height: 30px" />
-					</td>
-				</tr>
-				<tr>
-					<td class="col l1">
-						<label>
-							<input class="with-gap" type="radio" />
-							<span></span>
-						</label>
-					</td>
-					<td class="col l11">
-						<b>Rs. 400 <br />Cash on Delivery</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-						<img src="assets/images/cash.png" style="height: 40px" />
-					</td>
-				</tr>
-				<tr>
-					<td class="col l1">
-						<label>
-							<input class="with-gap" type="radio" />
-							<span></span>
-						</label>
-					</td>
-					<td class="col l11"><b>Store Pickup</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="assets/images/stp.png" style="height: 40px" /></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
-	<div class="container-fluid section">
-		<div class="row">
-			<div class="right-align">
-				<a href="#!/shipping" class="waves-effect medium btn" id="add-btn"><i class="material-icons left">keyboard_arrow_left</i>Back to shipping</a>
+			<div class="row section">
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="email" type="email" class="validate" />
+							<label for="email">Promo code</label>
+							<button class="waves-effect btn" style="width: 100%">Apply promo code</button>
+						</div>
+					</div>
+				</form>
+				<span class="red-text" id="shipError"></span>
+				<div class="input-field col s12">
+					<button
+						type="submit"
+						ng-controller="cart"
+						class="waves-effect btn-large orange darken-2 white-text"
+						ng-click="proceedToPayment()"
+						ng-disabled="!user.name || !addr.address"
+						style="width: 100%"
+					>
+						<i class="material-icons right">keyboard_arrow_right</i>Proceed to payment
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>

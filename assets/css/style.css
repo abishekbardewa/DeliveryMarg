@@ -424,3 +424,35 @@ del {
 span {
 	font-weight: 500;
 }
+/* Progress Bar */
+
+.progress {
+	border-radius: 0px;
+	overflow: visible;
+}
+.progress .determinate {
+	width: 100%;
+	background-color: #fbc02d;
+}
+.progress-marker {
+	position: absolute;
+	top: -0.8rem;
+	left: 50%;
+	width: 1.625rem;
+	height: 1.625rem;
+	margin-left: -0.8125rem;
+}
+.progress-marker i {
+	/* font-size: 30px; */
+	color: #fbc02d;
+	background: #ffffff;
+	/* padding: 5px 3px 0px 5px; */
+}
+.progress-label {
+	text-align: center;
+	padding-top: 10px;
+	font-weight: bold;
+}
+.progress-label h6 {
+	font-weight: bold;
+}
